@@ -1,0 +1,50 @@
+\usepackage[minionint, lf, loosequotes, swash, opticals, fullfamily]{MinionPro}
+\usepackage{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tikz,tikz-3dplot}
+\usepackage{wasysym}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{
+	arrows,
+	arrows.meta,
+	calc,
+	positioning,
+	decorations.pathreplacing,
+	decorations.markings,
+	decorations.text,
+	calligraphy,
+	pgfplots.dateplot
+}
+\tikzset{
+%	on each segment/.style={
+%		decorate,
+%		decoration={
+%			show path construction,
+%			moveto code={},
+%			lineto code={
+%				\path [#1]
+%				(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+%			},
+%			curveto code={
+%				\path [#1] (\tikzinputsegmentfirst)
+%				..
+%				(\tikzinputsegmentlast);
+%			},
+%			closepath code={
+%				\path [#1]
+%				(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+%			},
+%		},
+%	},
+	mid arrow/.style={postaction={decorate,decoration={
+				markings,
+				mark=at position .15 with {\arrow[#1]{Stealth}}
+	}}},
+	>=Stealth
+}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle, draw, minimum size=1.25em, inner sep=0pt, thick] (char) {#1};}}

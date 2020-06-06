@@ -1,0 +1,418 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PACKAGE IMPORTS %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% FONTS & SYMBOLS %%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+\usepackage{amsmath}
+% \usepackage{amsfonts,amssymb}
+\usepackage{MnSymbol}
+\usepackage[
+	minionint,
+	lf,
+	mathtabular,
+	loosequotes,
+	swash,
+	opticals,
+	fullfamily]{MinionPro}
+\usepackage{inconsolata}
+\usepackage{wasysym}
+\usepackage{microtype}
+
+%%%%% GEOMETRY, PAGE SETUP, SPACING, PARAGRAPHING %%%%%
+\usepackage[margin=2.5cm,a4paper]{geometry}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{tabto}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage[super]{nth}
+
+%%%%% SCIENCE FORMATTING %%%%%
+\usepackage{physics}
+\usepackage[
+	arc-separator = \,,
+	retain-explicit-plus,
+	%inter-unit-product =\cdot,
+	detect-weight=true,
+	detect-family=true,
+	range-phrase=--,
+	range-units=single
+]{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage[makeroom]{cancel}
+\renewcommand{\CancelColor}{\color{red}}
+
+%%%%% GRAPHICS, CAPTIONS, TABLES %%%%%
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz,tikz-3dplot}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+\usepackage[
+	justification=centering,
+	labelfont={small,bf},
+	font={small}
+]{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{
+	calc,
+	arrows,
+	arrows.meta,
+	positioning,
+	decorations.pathreplacing,
+	decorations.markings,
+	decorations.text,
+	calligraphy,
+	pgfplots.dateplot
+}
+\pgfplotsset{compat=1.17}
+\usepackage[outline]{contour}
+\contourlength{1pt}
+\newcommand*\circled[1]{
+	\begin{tikzpicture}[baseline=(char.base)]
+		\node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
+	\end{tikzpicture}
+}
+\tikzset{
+	mid arrow/.style={postaction={decorate,decoration={
+							markings,
+							mark=at position .15 with {\arrow[#1]{stealth}}
+						}}},
+	>=stealth
+}
+
+%%%%% REFERENCES AND LINKS %%%%%
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
+
+%%%%% MISCELLANEOUS %%%%%
+\usepackage{etoolbox}
+\usepackage{xpatch}
+\usepackage[useregional,calc]{datetime2}
+\DTMlangsetup[en-GB]{ord=raise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MATHS MACROS %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\tomb}{\quad\blacksquare{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CREF AND HYPERREF SETUP %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\crefdefaultlabelformat{#2\textbf{#1}#3}
+
+\creflabelformat{equation}{#2\textbf{(#1)}#3}
+\creflabelformat{figure}{#2\textbf{#1}#3}
+
+\crefname{equation}{\textbf{equation}}{\textbf{equations}}
+\Crefname{equation}{\textbf{Equation}}{\textbf{Equations}}
+\crefname{figure}{\textbf{Figure}}{\textbf{Figures}}
+\Crefname{figure}{\textbf{Figure}}{\textbf{Figures}}
+\crefname{table}{\textbf{Table}}{\textbf{Tables}}
+\Crefname{table}{\textbf{Table}}{\textbf{Tables}}
+\crefname{appendix}{\textbf{Appendix}}{\textbf{Appendices}}
+\Crefname{appendix}{\textbf{Appendix}}{\textbf{Appendices}}
+\crefname{section}{\textbf{\S}}{\textbf{\S}}
+\Crefname{section}{\textbf{\S}}{\textbf{\S}}
+\crefname{algorithm}{\textbf{Algorithm}}{\textbf{Algorithms}}
+\Crefname{algorithm}{\textbf{Algorithm}}{\textbf{Algorithms}}
+
+%%%%% SPECIFIC TO EXAM CLASS%%%%%
+\creflabelformat{question}{#2\textbf{#1}.#3}
+\creflabelformat{partno}{(#2\textbf{#1}#3)}
+\creflabelformat{subpart}{(#2\textbf{#1}#3)}
+
+\crefname{question}{question}{questions}
+\Crefname{question}{Question}{Questions}
+\crefname{partno}{}{}
+\Crefname{partno}{}{}
+\crefname{subpart}{}{}
+\Crefname{subpart}{}{}
+
+\hypersetup{
+	colorlinks   = true,            %Colours links instead of ugly boxes
+	urlcolor     = NavyBlue,        %Colour for external hyperlinks
+	linkcolor    = Magenta,         %Colour of internal links
+	citecolor    = Aquamarine       %Colour of citations
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%% EXAM CLASS SETUP %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% CHOICES ON ONE PAGE %%%%%
+\BeforeBeginEnvironment{choices}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{choices}{\endminipage}
+
+%%%%% QUESTION/CHOICE LABELS %%%%%
+\renewcommand{\questionlabel}{\thequestion.\hfill}
+\renewcommand{\subpartlabel}{(\thesubpart)}
+\renewcommand{\choicelabel}{\circled{\thechoice}}
+
+%%%%% POINTS FORMATTING %%%%%
+\renewcommand{\questionshook}{
+	\setlength{\rightpointsmargin}{1.75cm}
+	\setlength{\itemsep}{30pt}
+}
+
+%%%%% QUESTION/PART/SUBPART INDENTATION %%%%%
+\renewcommand{\partshook}{
+	\renewcommand\makelabel[1]{\rlap{##1}\hss}
+	% \setlength{\itemsep}{6pt}
+}
+
+\renewcommand{\subpartshook}{
+	\renewcommand\makelabel[1]{\rlap{##1}\hss}
+	% \setlength{\itemsep}{6pt}
+}
+
+\renewcommand{\choiceshook}{
+	\setlength{\labelsep}{10pt}
+	\settowidth{\leftmargin}{\circled{W}.\hspace{5pt}\hspace{0em}}
+	\setlength{\itemsep}{10pt}
+}
+
+\renewcommand{\solutiontitle}{
+	\noindent\textbf{Solution:}\par\noindent
+}
+
+%%%%% ONEPAR CHOICES SPREAD %%%%%
+\patchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+\patchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+
+%%%%% SOLUTION ENVIRONMENT %%%%%
+\SolutionEmphasis{\color{NavyBlue}}
+\correctchoiceemphasis{\color{blue}\bfseries\boldmath}
+\marksnotpoints{}
+\pointsinrightmargin{}
+\pointsdroppedatright{}
+\pointformat{\bfseries\textbf[\themarginpoints]}
+
+%%%%% REDEFINE COVER PAGINATION AS ARABIC %%%%%
+\makeatletter
+\renewenvironment{coverpages}{%
+	\ifnum \value{numquestions}>0\relax
+		\ClassError{exam}{%
+			Coverpages cannot be used after questions have begun.\MessageBreak
+		}{%
+			All question, part, subpart, and subsubpart environments
+			\MessageBreak
+			must begin after the cover pages are complete.\MessageBreak
+		}%
+	\fi
+	\@coverpagestrue
+	% \pagenumbering{arabic}%
+	\adj@hdht@ftht
+	\thispagestyle{headandfoot}
+}{%
+	\clearpage
+	% \setcounter{num@coverpages}{\value{page}}%
+	% \addtocounter{num@coverpages}{-1}%
+	% \pagenumbering{arabic}%
+	% Bugfix, Version 2.307\beta, 2009/06/11:
+	% We have to say \@coverpagesfalse before \adj@hdht@ftht
+	% because we're still inside the group created by the
+	% coverpages environment and we want to set the
+	% extraheadheight and extrafootheight to the values correct
+	% for the first non-cover page:
+	\@coverpagesfalse
+	\adj@hdht@ftht
+}
+\makeatother
+
+%%%%% SHOW 'SOLUTIONS' IN TITLEPAGE IF ANSWERS PRINTED %%%%%
+\newcommand{\printsolntitle}{
+	\ifprintanswers{
+		\vspace{20pt}
+		\fbox{\fbox{\Huge{\textssc{\textbf{\textcolor{red}{solutions}}}}}}
+		\vspace{20pt}
+	}
+	\fi{}
+}
+\newcommand{\envupspace}{\ifanswers{\vspace{20pt}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%% SIUNITX SETUP %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareSIUnit{\year}{y}
+\DeclareSIUnit{\AU}{AU}
+\DeclareSIUnit{\parsec}{pc}
+\DeclareSIUnit{\lightyear}{ly}
+\DeclareSIUnit{\earthmass}{\textit{M}_{\earth}}
+\DeclareSIUnit{\solarmass}{\textit{M}_{\astrosun}}
+\DeclareSIUnit{\atm}{atm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%% MISCELLANEOUS %%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%% PURPOSE FORGOTTEN %%%%%
+\AtBeginEnvironment{tabularx}{
+	\figureversion{tabular}
+	\sisetup{text-rm={\figureversion{tabular}}}
+}
+
+\renewcommand\tabularxcolumn[1]{m{#1}}
+
+\titlelabel{\vspace{-4cm}\thetitle\hspace{10pt}}
+\setlength{\jot}{8pt}
+
+%%%%% COPY-PASTABLE PDF %%%%%
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%%%%% MICROTYPE SETUP FOR HYPHENATION %%%%%
+\pretolerance=2500
+\tolerance=4500
+\emergencystretch=0pt
+\righthyphenmin=4
+\lefthyphenmin=4
+
+%%%%% DEFAULT CENTRED FIGURES %%%%%
+\AtBeginEnvironment{figure}{\centering}
+
+%%%%% RADIO BUTTONS %%%%%
+\makeatletter
+\newcommand*{\radiobutton}{%
+	\@ifstar{\@radiobutton0}{\@radiobutton1}%
+}
+\newcommand*{\@radiobutton}[1]{%
+	\begin{tikzpicture}
+		\pgfmathsetlengthmacro\radius{height("X")/2}
+		\draw[radius=\radius] circle;
+		\ifcase#1 \fill[radius=.6*\radius] circle;\fi
+	\end{tikzpicture}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ASTROCHALLENGE SETUP AND MACROS %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% ASTROCHALLENGE PAPER DATE %%%%%
+\providecommand*{\setacpaperdate}[1]{\DTMsavedate{theacpaperdate}{#1}}
+\providecommand*{\acpaperdate}{\DTMusedate{theacpaperdate}}
+
+%%%%% ASTROCHALLENGE SMALL CAPS %%%%%
+\providecommand{\astrochallenge}{\textbf{\textssc{AstroChallenge \figureversion{osf}\DTMfetchyear{theacpaperdate}}}}
+
+%%%%% {CATEGORY} {ROUND} ROUND %%%%%
+\pgfkeys{
+	/ac/.is family, /ac,
+	category/.is choice,
+	round/.is choice,
+	category/jnr/.code={\edef\category{Junior}},
+	category/snr/.code={\edef\category{Senior}},
+	category/junior/.code=\pgfkeysalso{category/jnr},
+	category/senior/.code=\pgfkeysalso{category/snr},
+	round/mcq/.code={\edef\round{MCQ}},
+	round/team/.code={\edef\round{Team}},
+	round/obs/.code={\edef\round{Observation}}
+	round/MCQ/.code=\pgfkeysalso{round/mcq},
+	round/Team/.code=\pgfkeysalso{round/team},
+}
+\providecommand*{\setcatround}[1]{\pgfqkeys{/ac}{#1}}
+\providecommand*{\catround}{\textbf{\textssc{\category{} \round{} Round}}}
+
+%%%%% ASTROCHALLENGE TITLING %%%%%
+\title{{\Huge\astrochallenge{}}}
+\author{\textcopyright \ National University of Singapore Astronomical Society \\
+	\textcopyright \ Nanyang Technological University Astronomical Society \\
+}
+
+%%%%% ACCESS TITLE COMMANDS %%%%%
+\makeatletter
+\let\newtitle\@title
+\let\newauthor\@author
+\makeatother
+
+%%%%% EXAM HEADER/FOOTER SETUP %%%%%
+\coverheader{\small{\astrochallenge{}}}{}{\small{\catround{}}}
+\header{\small{\astrochallenge{}}}{}{\small{\catround{}}}
+\headrule{}
+
+%%%%% PAGE NUMBERING: 'Page X of total' %%%%%
+\coverfooter{}{Page \thepage{} of \totalnumpages{}}{\oddeven{\textbf{[Turn over]}}}
+\footer{}{Page \thepage{} of \totalnumpages{}}{
+	\oddeven{
+		\iflastpage{\textbf{[End of paper]}}{\textbf{[Turn over]}}
+	}
+}
+
+%%%%% ASTROCHALLENGE INSTRUCTIONS %%%%%
+\providecommand*{\acinstructions}[1]{
+	\vspace*{20pt}
+	\fbox{
+		\fbox{
+			\parbox{0.9\textwidth}{
+				\vspace*{5pt}
+				\begin{center}
+					{\large{\textssc{\textbf{please read these instructions carefully.}}}}
+				\end{center}
+				\vspace*{10pt}
+
+				\begin{enumerate}[itemsep=8pt]
+					\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+					\item Do \textssc{\textbf{NOT}} turn over this page until instructed to do so.
+					\item You have \textbf{2 hours} to attempt all questions in this paper. If you think there is more than one correct answer, choose the most correct answer.
+					\item At the end of the paper, submit this booklet together with your answer script.
+					\item Your answer script should clearly indicate your name, school, and team.
+					\item It is \textit{your} responsibility to ensure that your answer script has been submitted.
+				\end{enumerate}
+				\vspace*{5pt}
+			}
+		}
+	}
+}
+
+%%%%% ASTROCHALLENGE COVER PAGE %%%%%
+\providecommand*{\accoverpage}[1]{
+	\begin{coverpages}
+		\begin{center}
+			\includegraphics[width=0.8\linewidth]{../graphics/misc/logo.jpg}
+
+			\newtitle{}
+
+			{\Huge{\catround{}}}
+
+			\printsolntitle{}
+
+			\acpaperdate{}
+
+			\acinstructions{}
+
+			\vspace*{20pt}
+
+			\newauthor{}
+		\end{center}
+	\end{coverpages}
+}

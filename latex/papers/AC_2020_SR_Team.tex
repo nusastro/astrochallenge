@@ -1,0 +1,1263 @@
+\documentclass[a4paper,11pt]{exam}
+
+\input{Preambles/preamble.tex}
+
+\coverfirstpageheader{\footnotesize{\textsc{\textbf{AstroChallenge \figureversion{osf}2019}}}}{}{\footnotesize{\textsc{\textbf{Senior Team Round}}}}
+\firstpageheader{\footnotesize{\textsc{\textbf{\figureversion{osf}AstroChallenge 2019}}}}{}{\footnotesize{\textsc{\textbf{Senior Team Round}}}}
+\runningheader{\footnotesize{\textsc{\textbf{AstroChallenge \figureversion{osf}2019}}}}{}{\footnotesize{\textsc{\textbf{Senior Team Round}}}}
+
+\renewcommand{\thequestion}{\alph{question}}
+\renewcommand{\questionlabel}{(\thequestion)}
+\renewcommand{\thepartno}{\roman{partno}}
+
+\renewcommand{\questionshook}{%
+	\settowidth{\leftmargin}{-1pt}%
+	\setlength{\rightpointsmargin}{1.75cm}%
+	\setlength{\itemsep}{10pt}%
+	\setlength{\parsep}{10pt}%
+}
+
+\begin{document}
+\begin{coverpages}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{Graphics/Misc/logo.jpg}
+		
+		\newtitle
+		
+		{\Huge{\textssc{\textbf{Senior Team Round}}}}
+		
+		%\printsolns
+		
+		{\Large{Monday, \nth{3} June 2019}}
+		
+		\vspace*{20pt}
+		\fbox{
+			\fbox{
+				\parbox{0.9\textwidth}{
+					\vspace*{5pt}
+					\begin{center}
+						{\Large{\textsc{\textbf{Please read these instructions carefully.}}}}
+					\end{center}
+					\vspace*{10pt}
+					
+					\begin{enumerate}[itemsep=8pt]
+						\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+						\item Do \textbf{NOT} turn over this page until instructed to do so.
+						\item You have \textbf{2 hours} to attempt all questions in this paper. 
+						\item At the end of the paper, submit this booklet together with your answer script.
+						\item Your answer script should clearly indicate your name, school, and team.
+						\item It is your responsibility to ensure that your answer script has been submitted.
+						\item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
+						\item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numbering of (i).
+					\end{enumerate}
+					\vspace*{5pt}
+				}
+			}
+		}
+	\end{center}
+	\pagenumbering{arabic}                     
+\end{coverpages}
+
+\newpage
+\section{Cosmological Inflation}
+
+\subsection*{Part I: The Universe}
+\begin{questions}
+\question[1] 
+	In astronomy, what does the term `cosmological inflation' refer to?
+	\droppoints
+	\begin{solution}
+		Cosmological inflation refers to the \textbf{exponential expansion} of the \textbf{extremely early} Universe, given timescales of \num{e-36} to \num{e-32} seconds after the Big Bang, where the inflation was by a factor of \num{e22}.
+	\end{solution}
+
+\question[2]\label{1b} 
+	Cosmological inflation was hypothesised in order to explain certain observations that could not otherwise be easily explained. Name and describe an example of such a problem. 
+	\droppoints
+	\begin{solution}
+		Three problems that are accepted:
+		\begin{itemize}[leftmargin=10pt]
+			\item \textbf{Horizon problem}: The observed \textbf{homogeneity} of distant parts of the Universe implies that there \textit{has} been \textbf{information} (i.e. thermal) \textbf{transfer} between said parts; however, their distances from us and from each other (~ 46 billion light years, and 93 billion light years respectively) suggest that it is impossible for them to have had \textbf{causal contact} for such information transfer to occur. 
+			\item \textbf{Flatness problem}: The current mass-energy density of the Universe is very close to the critical value of $ \Omega = 1$---in other words, the Universe is likely to be \textbf{flat}: it will probably undergo neither the Big Rip nor the Big Crunch, but experience a slow, gently decelerating expansion that would lead to the heat death of the Universe. The mass-energy density should have diverged far from the initial value at an increasing rate as time goes by and the Universe expands; however, as noted earlier, this is not the case.
+			\item \textbf{Magnetic monopole problem}: If the Universe was initially extremely hot and dense, a large number of magnetic monopoles (i.e. distributions of \textit{magnetic charge}, with field lines either radiating outwards or falling inwards, akin to electric charge) would have formed, due to the fact that three of the four fundamental forces, electromagnetism, the weak interaction and the strong force, should have been unified. However, there exist \textbf{no} such monopoles today.
+		\end{itemize}
+		It is prudent to note that all these problems are \textit{cosmological fine-tuning} problems.
+	\end{solution}
+
+\question[2] 
+	Explain how cosmological inflation resolves the problem you have stated in (\ref{1b}).
+	\droppoints
+	\begin{solution}
+		Three problems that are accepted:
+		\begin{itemize}[leftmargin=10pt]
+			\item \textbf{Horizon problem}: Given the extremely rapid expansion of the early Universe, the \textbf{initially} homogenous early Universe was inflated to modern scales within a matter of \num{e-32} seconds or so, hence `locking in' the homogeneity, despite their current immense distances from us, and from each other. This also explains the isotropy of the CMBR.
+			\item \textbf{Flatness problem}: The argument is similar to the above: the early Universe had a mass-energy density nearly equal to 1, because the rapid, exponential expansion of the early Universe led to a `locking in' of the mass-energy density, without allowing it to diverge far from the initial value.
+			\item \textbf{Magnetic monopole problem}: There exist no magnetic monopoles today, because the rapid expansion of the Universe meant that even though the fundamental forces were unified, they diverged quickly due to the rapidly decreasing temperature and pressure, and there was insufficient time for \textit{many} monopoles to have formed, if at all, given there are \textit{none} today. 
+		\end{itemize}
+	\end{solution}
+
+\question[1] 
+	What is the Cosmic Microwave Background?
+	\droppoints
+	\begin{solution}
+		The CMBR is remnant electromagnetic radiation left by the Big Bang, Big Bang nucleosynthesis, and Big Bang matter-antimatter annihilation, that has since been redshifted to microwave radiation equal to that emitted by a blackbody of temperature \SI{2.7}{\kelvin}.
+	\end{solution}
+
+\question[2] 
+	What process initially generated the Cosmic Microwave Background? Name and describe this process.
+	\droppoints
+	\begin{solution}
+		Until \num{380000} years after the Big Bang, the Universe was opaque to EM radiation, due to the ionised nature of matter (in turn due to the high ambient temperature of the Universe---about \SI{3000}{\kelvin}). At that point, however, \textbf{recombination} occurred, where electrons combined with positive nuclei to form neutral atoms, and thus, the Universe became transparent to EM radiation. The radiation seen from this event is what has now been redshifted to microwave radiation, today.
+	\end{solution}
+
+\clearpage
+\fullwidth{\subsection*{Part II: Galaxies}
+\textbf{Refer to Figure \ref{fig1}} to answer parts (\ref{1f}) and (\ref{1g}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Graphics/Questions/Inflation/inflation}
+	\caption{Negative image of the core of the Virgo Cluster; white circles are foreground stars that have been blotted out}
+	\label{fig1}
+	\vspace*{-10pt}
+\end{figure}}
+\question[2]\label{1f}
+	Galaxies tend to group in clusters, rather than exist in complete isolation. Account for this trend.
+	\droppoints
+	\begin{solution}
+		Minute \textbf{quantum fluctuations} in the distribution of matter in the early Universe eventually led to \textbf{clustering of dark matter} around regions of \textbf{increased density}. \textbf{Over time, ordinary matter coalesced} around these regions of dark matter, leading to clusters of galaxies, that explains the large-scale structure of the Universe, with clusters, superclusters, filaments and voids, rather than a random, uniform distribution of galaxies. 
+	\end{solution}
+
+\question[2]\label{1g}
+	It is clear from Figure \ref{fig1} that spiral galaxies are rare within the core of the Virgo Cluster. Furthermore, the few that \textit{do} exist, are highly distorted. Explain this observation.
+	\droppoints
+	\begin{solution}
+		The primary reason is \textbf{gravity}. The core of the Virgo cluster is a \textbf{dense, crowded place} with intergalactic collisions \textbf{common}. Most spiral galaxies in the core would have collided and merged with each other, and evolved to form yellow elliptical or lenticular galaxies. Any spiral galaxies \textit{still} left are in the merger process, and hence are highly distorted due to \textbf{tidal effects} from neighbouring massive galaxies.
+	\end{solution}
+
+\filbreak
+\fullwidth{\subsection*{Part 3: Stars and Star Clusters}}
+\vspace*{-10pt}
+\question
+	\begin{parts}
+		\part[1] What is parallax?
+		\droppoints
+		\begin{solution}
+			Parallax is the change in \textbf{apparent position} of an object when viewed from different locations. 
+			
+			In the case of the Earth and distant stars, it is the change in apparent position of a nearer star compared to more distant, apparently fixed background stars, as the Earth moves in its orbit around the Sun.
+		\end{solution}
+		
+		\part[1] How might one use parallax to determine the distance to a nearby star?
+		\droppoints
+		\begin{solution}
+			Answer from the Formula Book:
+			The distance to a star, $ d $ in \textbf{parsecs} with a parallax of $ p $ \textbf{arc-seconds} (where \SI{1}{\parsec} $\approx$ \SI{3.26}{\lightyear}) is given by: 
+			\begin{flalign*}
+				d &\approx \frac{1}{p} &
+			\end{flalign*}
+			Other accepted answers include a diagrammatic explanation of how parallax works.
+		\end{solution}
+	\end{parts}
+
+\setcounter{question}{9}
+\question[6]
+	Suppose one wishes to find out the distance to a certain open star cluster within the Milky Way. The star cluster is too far away for accurate parallax measurements. 
+	
+	Name \textbf{two} alternative methods to determine the distance to this star cluster, and briefly explain how each method works. 
+	
+	Your answer should explicitly specify what data needs to be collected for each method to work.
+	\droppoints 
+	\begin{solution}
+		\begin{enumerate}[leftmargin=12pt]
+			\item \textbf{Variable stars, e.g. Cepheids and RR Lyraes}: 
+			
+			\textbf{Data needed}: list of stars with variable brightness, and their light curves. 
+			
+			From the above, the periods and absolutely of the variability can be inferred/calculated, and thence be fitted to known variable stars, thus deriving the distance to this star cluster.
+			\item \textbf{Main-sequence fitting}: 
+			
+			\textbf{Data needed}: a colour-magnitude diagram (CMD) of the cluster in question, and a (CMD) of a cluster of known distance, so that the two can be compared.
+		\end{enumerate}
+		Solutions \textit{not} or partially accepted are \textbf{Type Ia supernovae} and \textbf{Hubble constant/redshift}.
+		
+		Other \textit{accepted} answers include standard candles like Vega, etc.
+	\end{solution}
+\end{questions}
+
+\newpage
+\section{The Last of the Main Sequence}
+How do low and intermediate-mass stars leave the main sequence and evolve into red giants? It turns out that this is a fairly complex process! Here, we will try to shed some light into the mechanics of the red giant phase. 
+
+\subsection*{Preliminaries}
+Stars are complex beasts. Several different processes occur within them, and to understand how stars evolve, we need to account for all of them. Table \ref{fig2} is a (non-exhaustive) list of a few processes within...
+
+\begin{figure}[H]
+	\centering
+	\begin{tabularx}{\linewidth}{@{}llX@{}}
+		\toprule
+		\textbf{Process} & \textbf{Equation} & \textbf{Description} \\ \midrule
+		\begin{tabular}[c]{@{}l@{}}Hydrostatic \\[-6pt] equilibrium \end{tabular} & $\displaystyle \dod{P}{M_r} = -\frac{GM_r}{4\pi r^4} $ & $ M_r $ represents the mass contained within radius $ r $ of the star. Note that $ r $ is a variable: in other words, this equation must hold true for \textit{all layers} within a stable star, and not just the outer radius. To avoid confusion, we will use $ R $ to denote the outer radius of the star, and \textit{not} $ r $. \\ 
+		\begin{tabular}[c]{@{}l@{}}Energy generation \\[-6pt] equation\end{tabular} & $ \dod{L}{M_r} = \varepsilon_\text{nuc} $ & $ \varepsilon_\text{nuc} $ is the rate of energy release per unit mass of nuclear fuel. \\
+		\begin{tabular}[c]{@{}l@{}}Rate of energy release \\[-6pt] for the p-p chain\end{tabular} & $ \varepsilon_\text{pp}\propto\rho X^2T^4 $ & $ \rho $ is the density of the gas, while $ X $ is the fraction of hydrogen, and $ 0 \leq X \leq 1 $. You may assume all hydrogen fusion occurs via the p-p chain i.e. $ \varepsilon_\text{nuc} = \varepsilon_\text{pp}. $ \\
+		\begin{tabular}[c]{@{}l@{}}Energy transport \\[-6pt] equation\end{tabular} & $\displaystyle \dod{T}{M_r}=-\left(\frac{1}{16\pi^2r^4\rho\lambda}\right)L_r $ & $ L_r $ is the \textit{net} energy flowing out of the star’s interior from radius $ < r $, while $ \lambda $ is a constant that describes the efficiency of conduction and radiation. \\
+		\begin{tabular}[c]{@{}l@{}}Virial Theorem for \\[-6pt] gravitationally bound \\[-6pt] systems \end{tabular} & $\displaystyle \text{KE} =-\frac{1}{2} \text{GPE} $ & If we measure the kinetic and gravitational potential energy of all the particles in a star, we would find that the magnitude of the total kinetic energy would be half that of the magnitude of the total gravitational potential energy. Note that GPE is negative, thus KE is always positive. \\
+		\begin{tabular}[c]{@{}l@{}}Kinetic energy of an \\[-6pt] \textit{average} ideal gas particle\end{tabular} & $\displaystyle \langle E_\text{k}\rangle = \frac{3}{2}kT $ &  \\ \bottomrule
+	\end{tabularx}
+	\caption{Equations and descriptions for stellar processes}
+	\label{fig2}
+\end{figure}
+
+\filbreak
+\begin{questions}
+\question[1]
+	The Formula Book has a different variation of the formula for hydrostatic equilibrium. Show that they are equivalent.
+	\droppoints
+	
+	\textbf{HINT}: Beginning at radius $ r $ of a star and moving outwards by $ \dif r $, one crosses a thin shell of volume $ 4\pi r^2 \dif r $. Multiplying that by the density at that radius yields the resultant change in mass $ \dif M_r $. See Figure \ref{fig3}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{Graphics/Questions/MainSequence/randdr}
+		\caption{A cross section of a sphere of radius $ r $ with a shell of thickness $ \dif r $, and mass $ \dif M_r $}
+		\label{fig3}
+	\end{figure}
+	\begin{solution}
+		From the hint:
+		\begin{flalign*}
+			\dif  M_{r} &= 4\pi r^2 \rho_{r} \dif r &
+		\end{flalign*}
+		Substituting in to the equation,
+		\begin{flalign*}
+			\frac{\dif P}{4\pi r^2 \rho_r \dif r} &= \frac{GM_{r}}{4\pi r^2} &\\
+			\dod{P}{r} &= -\rho_{r}\frac{4\pi r^{2}GM_{r}}{4\pi r^{2}} = -\rho_{r}\frac{GM_{r}}{r^2} &
+		\end{flalign*}
+	\end{solution}
+
+\fullwidth{From the previous, one can clearly solve for relevant stellar parameters (e.g. luminosity) by expressing them in terms of the enclosed mass $ M_r $, or in terms of the radius of the star. In practice, however, it is more convenient to work with the enclosed mass, and this convention will be followed in the rest of the question. \hfill {\footnotesize [Food for thought: Why is it more convenient?]}
+
+\begin{solution}
+	The mass of the star is approximately constant throughout its lifetime, while its radius can change dramatically as it moves from phase to phase. Thus, working with the enclosed mass allows us to avoid solving for the stellar radius \textit{explicitly} when its not needed for our calculations.
+\end{solution}
+
+\filbreak
+\subsection*{Intermediate-Mass Stars and the Subgiant Stage}\vspace*{-10pt}}
+
+\question[3]
+	We define low-mass stars as stars that eventually undergo a helium flash. Intermediate-mass stars do \textbf{not}, but neither do they undergo supernovae.
+	
+	What is a helium flash, and how does it occur? 
+	\droppoints
+	\begin{solution}
+		Due to their high density, the helium cores of low-mass stars become degenerate as they leave the main sequence: the pressure of the core is no longer dependent on temperature \textbf{[1]}. Eventually, conditions in the core become suitable for helium fusion, increasing the core temperature. Yet, due to the degenerate core, the core does not expand in response to the increased energy output \textbf{[1]}. 
+		
+		Because of this, the core temperature continues to climb, triggering runaway helium fusion throughout the core that eventually breaks the degeneracy. This is the helium flash \textbf{[1]}. 
+	\end{solution}
+	
+\fullwidth{\vspace*{-10pt}Now, both low mass and intermediate mass stars evolve into red giants via slightly different ways, but the broad mechanics are similar. Let us consider an intermediate mass star that has run out of hydrogen. The core is now completely comprised of inert helium and is surrounded by a shell of fusing hydrogen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.79]{Graphics/Questions/MainSequence/subgiant}
+	\caption{The internal structure of a subgiant star}
+\end{figure}
+\vspace*{-10pt}
+For an intermediate mass star, this configuration is initially stable: the inert helium core can, at first, support the outer layers without contracting.
+
+\vspace*{-10pt}}
+
+\filbreak
+\question[2]\label{q2c}
+	The inert core quickly becomes isothermal with its surroundings, i.e. the same temperature persists \textit{throughout} the core. Explain this phenomenon.
+	\droppoints
+	
+	\textbf{HINT}: Treat the core as being composed of many unit masses. You may then consider the equations in the Table, or utilise the First Law of Thermodynamics: the change in internal energy of each unit mass is equal to the amount of heat supplied to the unit mass, minus the amount of work done by the unit mass.
+	\begin{solution}
+		\textbf{Table}:
+		
+		When core nuclear fusion halts, no more energy flows outwards from the core \textbf{[1]}. Formally, $ \dod{L}{M_r} = 0 $ within the core, and obviously $ L_r=0 $ at the centre, thus $ L_r=0 $ throughout the core. 
+		
+		Applying our energy transport equation, when $ L_r=0, \dod{T}{M_r} = 0 $ i.e. the temperature does not change within the core as we move outwards. This implies that the core is isothermal \textbf{[1]}.
+		
+		\rule{\textwidth}{0.5pt}
+		
+		\textbf{First Law}: 
+		
+		Since the core is stable, no work is done by the unit mass throughout this process \textbf{[1]}. In other words, the unit mass is not sinking/rising/expanding/contracting, and thus no work is being done against gravity.
+		
+		Since no fusion is taking place within the core, the only heat flow is that between the unit mass and its surroundings \textbf{[1]}. When each unit mass reaches thermal equilibrium with the base of the hydrogen fusion shell, all further heat exchange halts and the internal energy (i.e. temperature) remains constant. Repeating this argument for each unit mass, we can see that eventually the entire core shares the same temperature as the base of the hydrogen fusion shell and is thus isothermal.
+	\end{solution}
+	
+\fullwidth{\vspace*{-10pt}\subsection*{Things Fall Apart\dots}
+The effective surface pressure of an isothermal ideal-gas stellar core, $ P_\text{core} $, is given by the equation:
+\begin{align*}
+	P_\text{core} = \frac{3RT_\text{core}M_\text{core}}{4\pi\mu_\text{core}{r_{core}}^3} - \frac{\alpha G{M_\text{core}}^2}{4\pi{r_\text{core}}^4}
+\end{align*}
+where:
+\begin{multicols}{2}
+	\begin{itemize}[leftmargin=10pt]
+		\item $ R $ is the ideal gas constant;
+		\item $ T_\text{core} $ is the temperature of the \textit{isothermal} core;
+		\item $ M_\text{core} $ is the total mass of the core;
+		\item $ r_\text{core} $ is the radius of the core;
+	\end{itemize}
+	\vfill\null
+	\columnbreak
+	\begin{itemize}[leftmargin=10pt]
+		\item $ \mu_\text{core} $ is the \textit{average} molar mass of each particle in the core;
+		\item $ \alpha \approx 1 $, a constant that depends on the star's internal structure;
+		\item $ G $ is the gravitational constant.
+	\end{itemize}
+\end{multicols}\vspace*{-10pt}
+Notice that there are only three \textit{variables} in this equation: $ M_\text{core} $, $ T_\text{core} $ and $ r_\text{core} $. It follows that increasing the core mass eventually reduces the effective surface pressure. Thus, as more helium ash accumulates at the core, the effective surface pressure of the core gradually falls. We will investigate if the other two variables change to counteract this effect.\vspace*{-10pt}}
+
+\filbreak
+\question[1]
+	While $ T_\text{core} $ is \textit{technically} a variable, its value does not change much, in reality. This is because the core temperature has equalised with the hydrogen fusion shell, as seen in (\ref{q2c}). Explain why the temperature of the hydrogen fusion shell cannot vary dramatically. 
+	\droppoints
+	\begin{solution}
+		Hydrogen fusion is highly sensitive to temperature (from the table, it varies with $ T^4 $): small changes in temperature lead to large changes in the fusion rate, which in turn leads to temporary loss of hydrostatic equilibrium for the hydrogen fusion shell. In response the hydrogen fusion shell contracts/expands such as to oppose the change in temperature. 
+	\end{solution}
+
+\question[2]\label{5e}
+	Let us consider $ r_\text{core} $ \textbf{only}. Give a \textit{qualitative, non-mathematical} explanation as to why, for a given $ M_\text{core} $ and $ T_\text{core} $, $ P_\text{core} $ cannot increase indefinitely.
+	\droppoints
+	
+	\textbf{HINT}: Treat this massive stellar core like a stress ball {\footnotesize (you might need one, anyway, at this point)}. The core has a fixed mass and temperature. In response to the pressure you exert on it, the core adjusts to a corresponding radius. What happens as you squeeze it harder and harder? Can your stress ball support unlimited amounts of pressure?	
+	\begin{solution}
+		As the core contracts, the self-gravity of the core becomes non-negligible \textbf{[1]}. This counteracts the increased gas pressure from contraction, until at some point it becomes dominant: further contraction causes the pressure to decrease \textbf{[1]}. 
+	\end{solution}
+	
+\question[4]
+	Prove, using calculus, that the premise in (\ref{5e}) is indeed true: there exists a maximum surface pressure, provided that \textit{only} $ r_\text{core} $ can vary.
+	\droppoints
+	\begin{solution}
+		Idea: take the derivative with respect to $ r_\text{core} $, and set $ P^{\prime}_\text{core} = 0$. Then, show that when $ P^{\prime} = 0,  P^{\prime\prime}_\text{core} < 0 $.
+		
+		Note that the expression is really rather messy; so let's clean it up, by combining all the terms except $ r_\text{core} $:
+		\begin{flalign*}
+			A &= \frac{3R}{4\pi}\frac{T_\text{core}M_\text{core}}{\mu_\text{core}} &\\
+			B &= \frac{\alpha G{M^2_\text{core}}}{4\pi}
+		\end{flalign*}
+		Observe that $ A, B > 0 $. Therefore, the pressure equation reduces to:
+		\begin{flalign*}
+			P_\text{core} &= \frac{A}{{r^3_\text{core}}}-\frac{B}{{r^4_\text{core}}} &\\
+			\dod{P_\text{core}}{r_\text{core}} &= 0 \implies \frac{-3A}{{r^4_\text{core}}}+\frac{4B}{{r^5_\text{core}}} = 0 &\\
+			4B &= 3Ar_\text{core} &\\
+			r_\text{core} &= \frac{4B}{3A}=\frac{4}{9}\frac{\alpha G M_\text{core}\mu_\text{core}}{{RT}_\text{core}} &
+		\end{flalign*}
+		$ A, B > 0 \implies r_\text{core} > 0$, and our answer makes sense, and hence a critical point exists. To prove that it is a maximum,
+		\begin{flalign*}
+			\dod[2]{P_\text{core}}{r_\text{core}} &= \frac{12A}{{r^5_\text{core}}}-\frac{20B}{{r^6_\text{core}}} &\\
+			&= \frac{4}{{r^5_\text{core}}}\left(3A-\frac{5B}{r_\text{core}}\right)
+		\end{flalign*}
+		Given $\displaystyle r_\text{core} > 0 \implies \frac{4}{r_\text{core}} > 0 $. Now, to prove a maximum, we need to prove $\displaystyle 3A - \frac{5B}{r_\text{core}} < 0$ when $\displaystyle r_\text{core} = \frac{4B}{3A}$. Hence:
+		\begin{flalign*}
+			\dod[2]{P_\text{core}}{r_\text{core}} &= 4\left(\frac{3A}{4B}\right)^5\left(3A-5B\frac{3A}{4B}\right) &\\
+			&= 4\left(\frac{3A}{4B}\right)^5\left(3A-\frac{5}{4}\left(3A\right)\right) &\\
+			&= 4\left(\frac{3A}{4B}\right)^5\cdot - \frac{1}{4}\left(3A\right) &\\
+			&= -3A\left(\frac{3A}{4B}\right)^5 < 0
+		\end{flalign*} 
+	\end{solution}
+	
+\filbreak
+\question[1]
+	We thus informally show that the effective surface pressure can only decrease as the core mass increases. Therefore, as the mass of the core increases, eventually it cannot support the overlying stellar envelope and \textit{also} remain isothermal. With appropriate values, it follows that an isothermal helium core has no more than approximately 10\% of the total mass of the star.
+	
+	However, things are different for the Sun---simulations suggest that the Sun will develop an isothermal helium core of nearly \textit{half} the mass of the Sun. Briefly explain how the Sun can support such a situation.
+	\droppoints
+	\begin{solution}
+		The helium core in the Sun is so dense that degeneracy pressure is significant; therefore, it no longer behaves like an ideal gas and our calculations do not apply.
+	\end{solution}
+
+\fullwidth{\vspace*{-10pt}\subsection*{The Centre Cannot Hold}
+	What happens as we cross this point? The core starts to contract, converting its gravitational potential energy into thermal energy by the Virial Theorem, and the core heats up. The core thus loses heat energy to the surroundings, which partially arrests core collapse: the core shrinks in a slow and orderly manner. Yet this contraction creates havoc for the hydrogen fusion shell. We illustrate this with the results of a simulation for a 5 solar mass star.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Graphics/Questions/MainSequence/virialthm}
+	\caption{Core contraction of an intermediate-mass star}
+	\label{fig5}
+\end{figure}
+
+\filbreak
+\vspace*{-30pt}}
+\question[1]
+	When core fusion halts, a unit mass at the outer edge of the hydrogen fusion shell lies at 0.4 solar radii, with 0.6 solar masses underlying it. Within a short span of time (approximately \num{300000} years) the core and hydrogen fusion shell contracts to their maximum extents such that the same unit mass is now at 0.1 solar radii. 
+	 
+	Calculate the change in GPE experienced by the core and hydrogen fusion shell during this process. Assume uniform density.
+	\droppoints
+	
+	\textbf{NOTE}: By the Shell Theorem, you should ignore the mass of the outer envelope when performing your GPE calculations, because the \textit{net} gravitational force exerted by the outer envelope upon the core/hydrogen fusion shell is zero.
+	\begin{solution}
+		\begin{flalign*}
+		\Delta U &= U_\text{final}-U_\text{initial} &\\
+		&=-\frac{3}{5}\frac{GM^2}{R_\text{final}}+\frac{3}{5}\frac{GM^2}{R_\text{init}} &\\
+		&=\frac{3GM^2}{5}\left[\frac{1}{R_\text{init}}-\frac{1}{R_\text{final}}\right] &\\ &=\frac{3G\left(0.6\times \SI{1.989e30}{\kilogram}\right)^2}{5}\left[\frac{1}{0.4\times \SI{6.963e8}{\metre}}-\frac{1}{\SI{6.963e7}{\metre}}\right]&\\
+		&=\SI{-6.1e41}{\joule}
+		\end{flalign*}
+	\end{solution}
+	
+\setcounter{question}{9}
+\question[2]
+	By the Virial Theorem, this implies that the total energy of the core and hydrogen fusion shell has decreased: energy is being dumped into the outer layers. 
+	
+	Hence, calculate the total amount of energy transferred to the outer layers, \textbf{and} the implied average rate of energy transfer per second. Express your answer in terms of joules and solar luminosities ($ L_{\astrosun} $) respectively.
+	\droppoints
+	\begin{solution}
+		Since $ E_\text{total} = E_\text{kinetic} + E_\text{potential} $, and the Virial Theorem tells us that $\displaystyle E_\text{kinetic}= -\frac{1}{2}E_\text{potential} $, this tells us that if GPE changes by $ x $, $ E_\text{kinetic} $ changes by $ -0.5x $, and thus $ E_\text{total} $ changes by $ 0.5x $. 
+		
+		This implies that the $ E_\text{total} $ of the core falls by $ \SI{3.05e41}{\joule} $, and this is transferred to the outer layers over \num{300000} years \textbf{[1]}. Compute the `luminosity' for the other mark:
+		\begin{equation*}
+			L_\text{core}=\frac{\SI{3.05e41}{\joule}}{\num{300000} \text{ years}}= \SI{3.2e28}{\watt} = 83.2L_{\astrosun}
+		\end{equation*}
+	\end{solution}
+
+\filbreak
+\question[1]
+	Furthermore, the contraction compresses the hydrogen fusion shell, increasing its temperature and density. This stimulates much higher rates of nuclear fusion. 
+	
+	To prove this, calculate the pressure gradient, $ \dod{P_\text{new}}{M_r} $ generated by nuclear fusion at this point, in terms of $ \dod{P_\text{old}}{M_r} $. 
+	\droppoints
+	
+	\textbf{NOTE}: Despite the ongoing contraction, the star is \textit{still} approximately in hydrostatic equilibrium.
+	\begin{solution}
+		Apply the equation for HE and utilise proportionality:
+		\begin{flalign}
+		\dod{P_\text{new}}{M_r} &\propto \frac{M_r}{r^4} &
+		\end{flalign}
+		Since the enclosed mass is \textit{constant} in this case, we can drop it. We then have:
+		\begin{flalign*}
+		\dod{P_\text{new}}{M_r} &\div \dod{P_\text{old}}{M_r} = \frac{1}{{r_\text{new}}^4} \div \frac{1}{{r_\text{old}}^4} &\\
+		\implies \dod{P_\text{new}}{M_r} &= \frac{{r_\text{old}}^4}{{r_\text{new}}^4} \times \dod{P_\text{old}}{M_r}&\\
+		&= {\left(\frac{0.4r_\text{sun}}{0.1r_\text{sun}}\right)}^4 \times \dod{P_\text{old}}{M_r} &\\
+		&= 256 \dod{P_\text{old}}{M_r}
+		\end{flalign*}
+		This means that the fusion rate in this part of the hydrogen fusion shell increases by \textbf{256 times}! This is the key reason why red giants are so luminous.
+	\end{solution}
+	
+\fullwidth{\vspace*{0pt}Due to these two factors, the luminosity of the star dramatically increases. Some of the emitted energy is absorbed by the envelope: following the Virial Theorem, this causes the envelope to expand and cool. The star has now become a red giant.
+
+\subsection*{The Mirror Principle and Helium Fusion}
+We now come to the main takeaway of this question. The observations and mechanisms in the previous sections generally apply to different stellar models, from low- to intermediate mass stars. This leads to a useful empirical observation known as the `Mirror Principle'. 
+
+When a star has an active hydrogen fusion shell, this shell acts as a mirror between the core and the outer envelope. In other words, core \textit{contraction} leads to \textit{expansion} of the outer envelope, and core \textit{expansion} leads to \textit{contraction} of the outer envelope.
+
+For an example of the Mirror Principle in action, consider a star at the end of the red giant stage. After sufficient core contraction, conditions in the helium core allow helium fusion to begin. In response, the helium core stops contracting and re-expands from its minimum size at the red giant stage. 
+
+At this point, the luminosity of the intermediate-mass star decreases from the red giant phase, and the star correspondingly shrinks and becomes hotter. The star thus leaves the red giant branch, following the predictions of the Mirror Principle.
+\vspace*{-10pt}
+}
+\setcounter{question}{12}
+\question[2]
+	Explain why the luminosity of the star decreases \textit{despite} the introduction of a new source of energy, \hspace*{2pt} helium fusion.
+	\droppoints
+	\begin{solution}
+		Simply reverse the arguments made in (j) and (k):
+		\begin{enumerate}[leftmargin=10pt]
+			\item Core expansion requires energy, reducing the energy output by the core
+			\item The density/temperature of the hydrogen fusion shell is decreased during core expansion, lowering the pressure gradient required to maintain hydrostatic equilibrium---i.e. the amount of nuclear fusion in the hydrogen fusion shell \textit{falls}.
+		\end{enumerate}
+		These two factors outweigh the increase in energy production due to helium fusion, and thus overall luminosity falls.
+	\end{solution}
+\end{questions}
+\newpage
+\section{Flat and \textit{Somewhat} Round}
+Protoplanetary discs, galactic discs, planets with rings set in concentric discs---the universe is \textit{full} of discs, but we hardly ever stop to wonder why. Take our solar system, for instance. All the planets move with minimal inclination to the ecliptic. This is clearly because the protoplanetary disc is, well, a disc. But why? What is so special about discs? This question is the focus of \textbf{Part I: A Universal Slimming Regime}.
+
+\textbf{Part II: Expanding Horizontally} is inspired by the hypothetical Planet Nine. Why do we hypothesise that Planet Nine might exist? We will look at a line of reasoning for this hypothesis, using a famous mechanism in orbital theory.
+
+\subsection*{Part I: A Universal Slimming Regime}
+To understand why discs form, one needs to return to the very beginnings of stellar formation. Stars form from the gravitational collapse of interstellar clouds of gas, also known as nebulae.
+\begin{questions}
+\question[2]
+	Explain briefly why gravitational collapse occurs. Mathematical arguments are \textbf{not} required.
+	\droppoints
+	\begin{solution}
+		An interstellar cloud of gas remains in hydrostatic equilibrium if the kinetic energy of the gas balances the potential energy of the internal gravitational force. (Expressed in mathematical terms by the Virial theorem, equilibrium is maintained if gravitational potential energy is twice the internal kinetic thermal energy.) Above a certain mass (known as the Jeans mass), gravitational potential energy will overcome the gas pressure, forcing gravitational collapse. 
+	\end{solution}
+	
+\question
+	As collapse occurs, the cloud undergoes fragmentation until the cloud fragments reach stellar mass. These are called protostellar clouds.
+	\begin{parts}
+		\part[1] State \textbf{four} possible factors which may affect the fragmentation process.
+		\droppoints
+		\begin{solution}
+			Turbulence, rotation, magnetic fields, internal cloud density/matter distribution, cloud geometry, internal flows, etc.
+		\end{solution}
+		
+		\part[2] Hence, or otherwise, comment on the expected geometry and net angular momentum of the protostellar clouds. Justify your answers.
+		\droppoints
+		\begin{solution}
+			Non-uniform geometries and non-uniform net angular momenta.
+			
+			\textbf{Also accepted: non-uniform geometry and non-zero net angular momentum.}
+			
+			The reason is due to the large number of factors affecting the fragmentation process. These factors, in all probability, are present and affect the cloud non-uniformly. It is therefore far more likely to expect the fragmentation process to be non-uniform. 
+		\end{solution}
+	\end{parts}
+
+\question
+	Each protostellar cloud will continue to collapse towards its own centre of mass, as long as gravitational binding energy can be lost---this is done via radiation in the beginning, and then when the cloud becomes opaque to its own radiation, via dust (infrared emissions). Naturally, density and temperature both increase towards the centre of mass.
+	\begin{parts}
+		\part[2] How does the motion of the gas in each cloud change during this process?
+		Explain your answer.
+		\droppoints
+		\begin{solution}
+			The gas in each cloud starts out somewhat random, and averages out towards the direction of the net angular momentum of the cloud.
+			
+			The reason is because of the increasing rate of gas collisions. As the rate of collision increases due to the collapse, on average there will be a net bias in resultant angular momenta of the particles towards the direction of the net angular momentum of the cloud, since particles interact much more often.
+			
+			\textbf{Also accepted: The velocity and angular velocity of the gas increases. Since the cloud contracts, the radius of orbital motion decreases. By conservation of angular momentum, the angular velocity must increase.}
+		\end{solution}
+		
+		\part[3] Hence, or otherwise, explain why a protoplanetary disc forms. 
+		\droppoints
+		\begin{solution}
+			By conservation of angular momentum, the rotation increases as the radius of each cloud (now called a solar nebula) decreases. Notice that centripetal acceleration from orbital motion resists gravitational pull only in the radial direction (or in the orbital plane).
+			
+			That is to say, coupled with the established direction of net angular momentum of the cloud, and the fact that particles in the cloud average out in this direction, most particles resist the gravitational pull in a disk.
+			
+			Therefore, the cloud collapse is resisted in a radial direction, but is free to collapse in the vertical direction. As this process continues, the disk is established.
+		\end{solution}
+	\end{parts}
+
+\filbreak
+\fullwidth{\subsection*{Part II: Expanding Horizontally}
+	
+Planets, moons, and asteroids (typically) form out of debris in the protoplanetary disc. As such,
+one expects the orbital planes of planets, asteroids, and other objects about a star to lie within
+a narrow range of inclinations. An orbit can be described with six parameters, summarised in Figure \ref{fig6}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{Graphics/Questions/Orbits/orbitpars}
+	\caption{The six parameters of an orbit of a celestial body about another}
+	\label{fig6}
+\end{figure}
+\vspace*{-10pt}
+
+In this question, we will only focus on \textbf{two} parameters: the argument of periapsis $ \omega $, which is the angle formed from the plane of reference to the periapsis, and the inclination, $ i $, the angle between the plane of reference, and the orbital plane. For the Solar System, the reference plane is the ecliptic.
+
+It is well-known that external gravitational perturbations can alter orbits. Indeed, the discovery of Neptune was due to analyses of pertubations of Uranus' orbit. Early in the \nth{20} century, the search for a ninth planet (Planet X) led to the discovery of Pluto, even if rather inadvertently.
+
+One commonly-known perturbation effect takes place via the Kozai mechanism. This is a three-body system, consisting of two bodies orbiting about a centre of mass (called the \textit{inner binary}) and one outer body also orbiting the centre of mass at an angle, called the \textit{perturber}. The mechanism investigates the effects of the perturber's gravity on the inner binary.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{Graphics/Questions/Orbits/kozai.pdf}
+	\caption{The Kozai mechanism: $ m_0 $ and $ m_1 $ form the inner
+		binary, and $ m_2 $ is the perturber}
+	\label{fig7}
+\end{figure}
+
+The Kozai mechanism causes several interesting effects. These include:
+\begin{itemize}[leftmargin=10pt]
+	\item Kozai oscillations, in which the plane(s) of orbit(s) of the inner binary oscillate about the plane of orbit of the pertuber. In mathematical terms, this is a periodic oscillation of $i$. The period of oscillation is much longer than the orbital periods of the bodies.
+	\item Libration of argument of perihelion/pericentre, i.e. the oscillation of the argument of periapsis of the inner binary orbits about a certain fixed value.
+\end{itemize}
+
+Fundamentally, this is a highly-complicated dynamical problem. We will simplify the situation by making the following assumptions:
+\begin{itemize}[leftmargin=10pt]
+	\item $m_0$ is a highly massive object.
+	\item $m_0 \gg m_2$ (e.g. star-planet systems).
+	\item $m_1 = 0$.
+	\item All objects are effectively point masses.
+\end{itemize}
+
+Under the above assumptions, we call $m_0$ the \textit{primary} and $m_1$ the \textit{secondary}. We need only consider two orbits: the orbit of the secondary $m_1$, and the orbit of the perturber $m_2$.
+
+For $m_1$, there is a conserved quantity $L_z$, which we will discuss. If the orbit of $m_2$ is close to the orbit of $m_1$, libration of the argument of periapsis is expected around \ang{0} or \ang{180}. If the orbit of $m_2$ is distant, libration of the argument of periapsis is expected around \ang{90} or \ang{270}.
+
+The quantity $L_z$ is dependent on the system and is the component of the secondary's orbital angular momentum parallel to the angular momentum of the perturber. It satisfies
+\begin{align*}
+L_z = \sqrt{a-be^2}\cos i,
+\end{align*}
+where $a,b$ are integers, which you will be asked to determine, $i$ is the angle of inclination of the orbit of $m_1$ with reference to the plane of the perturber, and $e$ is the orbital eccentricity of the orbit of $m_1$.
+
+Table \ref{tbl8} provides an idealised (up to rounding) dataset of six orbits perturbed by $m_2$ (under the above assumptions).
+\begin{figure}[H]
+	\centering
+	\begin{tabularx}{0.3\textwidth}{@{}lc@{}}
+		\toprule \textbf{Eccentricity $\varepsilon$} & \textbf{Inclination $i$} \\ \midrule
+				 $0.225$ & $39.7^\circ$\\
+				 $0.301$ & $38.1^\circ$\\
+				 $0.359$ & $36.5^\circ$\\
+				 $0.413$ & $34.6^\circ$\\
+				 $0.432$ & $33.7^\circ$\\
+				 $0.475$ & $31.5^\circ$\\
+		\bottomrule
+	\end{tabularx}
+	\renewcommand{\figurename}{Table}
+	\caption{Ideal data for orbits of massless test particles $m_1$ about the primary $m_0$ under perturbation by $m_2$}
+	\label{tbl8}
+\end{figure}
+}
+
+\filbreak
+\vspace*{-30pt}
+\question[6]
+	It is given that the ratio, $ a : b $ is in its most simplified form. Plot a suitable \textbf{linear} graph to determine $ a $ and $ b $. Show all appropriate workings, including the linearisation of the given equation.
+	\droppoints
+	\begin{solution}
+		\begin{itemize}
+			\item 1 point: linearisation (working required)
+			
+			Manipulating the equation $L_z = \sqrt{a-be^2}\cos i$ by squaring and dividing by $\cos^2 i$, we obtain
+			\begin{align*}
+			\frac{L_z^2}{\cos^2 i} = a-be^2.
+			\end{align*}
+			This is the linearised form for the graph with vertical axis in terms of $L_z$.
+			
+			Alternatively, notice that $L_z$ is an unknown value. Therefore, the linearised form for the graph using only numbers is
+			\begin{align*}
+			\frac{1}{\cos^2 i} = -\frac{b}{L_z^2}e^2 + \frac{a}{L_z^2}.
+			\end{align*}
+			
+			\textbf{Note: some students computed a different linear equation that allowed them to read the $Y$-intercept or the gradient directly to obtain the ratio $a:b$. This is perfectly fine.}
+			
+			\item 1 point: correct coordinate values (working NOT required)
+			
+			\begin{figure}[H]
+				\centering
+				\begin{tabularx}{0.7\textwidth}{@{}XYYY@{}}
+					\toprule \textbf{Eccentricity $e$} & \textbf{Inclination $i$} & $e^2$ & $\displaystyle \frac{1}{\cos^2 i}$  \\ \midrule
+					 $0.225$ & \ang{39.7} & $0.051$ & $1.69$\\
+					 $0.301$ & \ang{38.1} & $0.091$ & $1.61$\\
+					 $0.359$ & \ang{36.5} & $0.129$ & $1.55$\\
+					 $0.413$ & \ang{34.6} & $0.171$ & $1.48$\\
+					 $0.432$ & \ang{33.7} & $0.187$ & $1.44$\\
+					 $0.475$ & \ang{31.5} & $0.226$ & $1.38$\\
+					\bottomrule
+				\end{tabularx}
+			\end{figure}
+			
+			\item 1 point: plotted points and axes labelling
+			\item 1 point: line
+			\item 1 point: computation of $y$-intercept and gradient of line
+			
+			Linear regression calculator gives intercept at $1.776$ and gradient at $-1.764$. The precise value used in creating this question was (of magnitude) $\frac{16}{9} $%= 1.\ol{7}$.
+			
+			A value of approximately $1.77$ or $1.78$ is more or less expected. The acceptable range is $\pm 5\%$, i.e. $1.68$ to $1.87$.
+			
+			\begin{figure}[H]
+				\centering
+				%\includegraphics[scale=0.5]{FaSR_3.png}
+			\end{figure}
+			
+			\item 1 point: values $a=b=1$ (minor working or explanation required)
+			
+			Here, students should realise that they cannot just \textit{multiply} to get astronomically (pun intended) large numbers. Rather, when treating data, often one needs to be aware that the numbers may be slightly off, and account for it. In this case, the $a:b$ ratio is incredibly close to $1:1$, so this should give $a=b=1$.
+		\end{itemize}
+	\end{solution}
+
+\fullwidth{
+\textbf{Use the following information to answer part (\ref{3e})}. 
+
+Recently, analysis of the orbits of trans-Neptunian objects have led to the hypothesis and a renewed search for Planet Nine, thought to be between five to ten Earth masses. Consider the following dataset of Kuiper Belt objects (KBOs). These objects have been used in existing studies debating Planet Nine.
+
+\begin{figure}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{@{}XYYYY@{}}
+		\toprule
+		\textbf{Object} & \textbf{\begin{tabular}[c]{@{}c@{}}Semi-major\\[-6pt] axis\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Orbital \\[-6pt] eccentricity\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Argument of \\[-6pt] periapsis\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Inclination\\[-6pt] w.r.t. ecliptic\end{tabular}} \\ \midrule
+		\textbf{VP113}     & \textbf{266}       & \textbf{0.69}       & \textbf{\ang{292.8}}       & \textbf{\ang{24.1}}     \\
+		\textbf{TG422}     & \textbf{503}       & \textbf{0.93}       & \textbf{\ang{285.7}}       & \textbf{\ang{18.6}}     \\
+		\textbf{GB174}     & \textbf{351}       & \textbf{0.87}       & \textbf{\ang{347.8}}       & \textbf{\ang{21.5}}     \\
+		\textbf{Sedna}     & \textbf{50}7       & \textbf{0.85}       & \textbf{\ang{311.5}}       & \textbf{\ang{11.9}}     \\
+		FT28               & 295       & 0.86       & \ang{40.2}        & \ang{17.3}     \\
+		KG163              & 680       & 0.95       & \ang{32.0}        & \ang{14.0}     \\
+		SY99               & 730       & 0.93       & \ang{32.4}        & \ang{4.2 }     \\
+		TG387              & 1200      & 0.94       & \ang{118.2}       & \ang{11.7}     \\
+		GT50               & 310       & 0.89       & \ang{129.2}       & \ang{8.8 }     \\
+		\textit{RF98}      & \textit{364}       & \textit{0.90}       & \textit{\ang{311.8}}       & \ang{29.6}     \\
+		SR349              & 299       & 0.84       & \ang{341.4}       & \ang{18.0}     \\
+		\textbf{VN112}              & \textbf{327}       & \textbf{0.85}       & \textbf{\ang{327.1}}       & \textbf{\ang{25.6}}     \\
+		RX245              & 430       & 0.89       & \ang{65.4}        & \ang{12.2}     \\
+		FE72               & 1600      & 0.98       & \ang{134.4}       & \ang{20.6}     \\ \bottomrule
+	\end{tabularx}
+	\renewcommand{\figurename}{Table}
+	\caption{Some properties of orbits of some KBOs; the reference plane is the ecliptic}
+	\label{tbl9}
+\end{figure}
+
+\vspace*{-10pt}
+In Table \ref{tbl9}, objects in \textbf{boldface} have been studied by Trujillo and Sheppard (2014) in the initial hypothesis of Planet Nine. The \textit{italicised} object was added to the bolded ones in a 2016 study by Brown and Batygin. The most recent study (2019) considers \textit{all} the above objects.
+
+Following are further notes on the above objects. The group of objects studied by Brown and Batygin exclude those with unstable orbits due to close approaches to Neptune or mean-motion resonances. The six objects in \textbf{boldface} and \textit{italics} display clustering in longitudes of perihelion, have tilted orbits which are roughly coplanar, and were discovered by six different telescopes on six different surveys (one object each).
+\vspace*{-10pt}
+}
+
+\question[4]\label{3e}
+	In Figure \ref{fig6}, for an object in orbit around the Sun, the angle sum of the longitude of the ascending node $ \Omega $ and the argument of periapsis $ \omega $, is the longitude of perihelion, $ \varpi $. 
+	 
+	Discuss whether the Kozai mechanism could be a valid justification for the presence of Planet Nine. You should provide arguments for and against, weigh them, and decide on a stance.
+	\droppoints
+	\begin{solution}
+		First, there are many bodies, so we need to make clear where each body is. $m_0$ is the Sun. $m_1$ refers to the eTNOs, and $m_2$, the pertuber, is the hypothesised Planet Nine.
+		
+		Possible arguments \textbf{for}:
+		\begin{enumerate}[leftmargin=13pt]
+			\item With the exception of TG387, GT50, and FE72, the remainder of the objects have arguments of periapsis clustered around $0^\circ$, fitting the expected effect of a pertubation via the Kozai mechanism.
+			
+			\item The high orbital eccentricities can be explained by a conserved quantity $L_z$, which trades off inclination for eccentricity.
+			
+			\item The clustering of the six objects cannot be reasonably explained by observer bias (it could, but the probability would be really low). The clustering of longitudes have a very low probability of occurrence due to random chance, due to differing rates of precession (due to eccentricities and semi-major axes differing). That is to say, the clustering is very unlikely to be due to an event in the (distant) past, and supports the hypothesis of a gravitational influence.
+		\end{enumerate}
+		
+		Possible arguments \textbf{against}:
+		\begin{enumerate}[leftmargin=13pt]
+			\item The number of objects studied is small, and the observations of clustering could be due to some astronomical coincidence. Of astronomical probabilities. Astronomically crazy stuff, it is!
+			
+			\item There exist more than one clustering group, as many as three centred around approximately $310^\circ$, $40^\circ$, and $125^\circ$. In fact, the study by Brown and Batygin find an argument of periapsis clustering around $310^\circ$, which differs from the Kozai prediction.
+			
+			\item The dataset is largely unreliable due to a number of other effects, such as close approaches to Neptune, or mean-motion resonances.
+		\end{enumerate}
+	\end{solution}
+\end{questions}
+
+\newpage
+\section{Presumptuous Assumptions}
+\subsection*{Introduction}
+When we consider problems regarding a star-planet system, or planet-moon system, assumptions are often made about the system to simplify calculations. For example, one extremely popular assumption is that of `circular orbits' (i.e. eccentricity, $ \varepsilon = 0 $). Another popular assumption is that of `point masses', when performing gravitational computations.
+
+By the very nature of Astronomy, assumptions abound. Some of these assumptions are perfectly valid---for instance, `point masses' are \textit{usually} valid because the distances between said masses are much greater compared to the objects themselves. Some are invalid: for instance, circular orbits will fail in almost \textit{any} scenario involving comets.
+
+We say that an assumption is \textit{valid} if the deviation from the assumption does \textit{not} affect the theory under the assumption significantly. The assumption \textit{fails} if said deviation affects said theory.
+
+It is clear that some assumptions are simply made for the sake of simplification. In this question, we take a brief look into the world of assumptions.
+
+\subsection*{Part I: How Big is the Hill?}
+The Hill sphere of an astronomical body $X$ is the region in which the gravitational attraction of $ X $ dominates. In other words, if we theoretically consider only gravitational influences, a satellite might be expected to be found in an orbit around $X$ if and only if the orbit lies within the Hill sphere of $X$. The Hill radius is the radius of the Hill sphere. Of course, the word `sphere' is a misnomer---the Hill sphere is not \textit{precisely} spherical.
+
+Consider first the problem of a three-body system, consisting of
+\begin{itemize}
+	\item a body $P$ with mass $m$,
+	\item a body $Q$ with mass $M$, and
+	\item a satellite $S$ of mass $\mu$.
+\end{itemize}
+Assume that $P$ is orbiting about $Q$ with a circular orbit of radius $r$, and $S$ is orbiting $P$ at the Hill radius $r_H$ of $P$.
+
+When $S$ is lying on the line joining $Q$ and $P$, the forces exerted on $S$ at that point can be expressed as
+\begin{align*}
+\frac{Gm\mu}{(r_H)^2} + \frac{GM\mu(r-r_H)}{r^3} = \frac{GM\mu}{(r-r_H)^2}.
+\end{align*}
+Of course, in doing so, we have made a number of assumptions, one of which being that all the bodies are point masses.
+
+\begin{questions}
+\question[1.5]\label{4a}
+	As the above equation suggests, there are three components to consider in balancing the forces. Name (or explain the origins of) these three components, and match them to their respective terms in the equation.
+	\droppoints
+	\begin{solution}
+		This is actually a very well-disguised $F_c = F_g$ (centripetal force equals gravitational force) equation.
+		
+		\begin{itemize}
+			\item $\frac{Gm\mu}{r_H^2}$: Gravitational force of $P$ acting on $p$. This is obvious.
+			\item $\frac{GM\mu}{(r-r_H)^2}$: Gravitational force of $S$ acting on $p$. This is also obvious.
+			\item $\frac{GM\mu(r-r_H)}{r^3}$: Centripetal force acting on $p$, considered as an orbit around $S$. This is perhaps not so obvious, but it arises due to fact that $p$ is being dragged in orbit about $S$ by the combined gravitational forces. Consider that the centripetal force on $p$ about $S$ is given by $\mu \omega^2 (r-r_H)$, where $\omega$ is the angular velocity of the planet, i.e.
+			\begin{align*}
+			m\omega^2 R = \frac{GMm}{R^2}.
+			\end{align*}
+			Then $\omega^2 = \frac{GM}{R^3}$, which is exactly what was needed,
+		\end{itemize}
+	\end{solution}
+	
+\filbreak
+\question[1.5]
+	There are \textbf{three} major assumptions made in the above scenario. These assumptions are respectively regards to: firstly, the relation between M and m; secondly, the relation between $ \mu $, $ Q $, $ S $, and $ P $; and thirdly, other forces acting on the system.
+	
+	State these three assumptions.
+	\droppoints
+	\begin{solution}
+		\begin{enumerate}[leftmargin=13pt]
+			\item The relation between $M$ and $m$: $M \gg m$.
+			\item $\mu$, $p$, $S$, and $P$: $\mu$ is sufficiently small such that the gravitational effect of $p$ on $S$ and $P$ is negligible.
+			
+			\textbf{Also accepted: $\mu \ll m, M$.}
+			\item Other forces acting on the system: No other forces, i.e. the system is an isolated system.
+		\end{enumerate}
+	\end{solution}
+	
+\filbreak
+\question[3]\label{4c}
+	Show that the Hill radius $r_H$ of $P$ is approximately given by
+	\begin{align*}
+		r_H \approx r\sqrt[3]{\frac{m}{3M}}.
+	\end{align*}
+	\droppoints
+	
+	
+	\textbf{NOTE}: You may need to use binomial approximation(s). If you do, or if you make any other mathematical assumptions, you are required to justify the validity of the assumption made. Justifications of assumptions need not be rigorous---a short sentence will suffice.
+	\begin{solution}
+		From 
+		\begin{align*}
+		\frac{Gm\mu}{r_H^2} + \frac{GM\mu(r-r_H)}{r^3} = \frac{GM\mu}{(r-r_H)^2},
+		\end{align*}
+		by dividing throughout by $G\mu$, we obtain
+		\begin{align*}
+		\frac{m}{r_H^2} + \frac{M(r-r_H)}{r^3} = \frac{M}{(r-r_H)^2}.
+		\end{align*}
+		Rewriting this equation, we obtain
+		\begin{align*}
+		\frac{m}{r_H^2} + \frac{M}{r^2}\bigbracket{1 - \frac{r_H}{r}} = \frac{M}{r^2}\bigbracket{1 - \frac{r_H}{r}}^{-2}.
+		\end{align*}
+		
+		Since $M\gg m$ and $\mu$ is sufficiently small, therefore $r_H \ll r$ and $\frac{r_H}{r}$ is small. (The long version: The binomial approximation ensures $(1+x)^m \approx 1+mx$ if $x$ is small. Since $\mu$ is sufficiently small such that the gravitational effect of $p$ on $S$ and $P$ is negligible, and $M\gg m$, it is reasonable to conclude that $r \gg r_H$. Then $\frac{r_H}{r}$ is small, so the binomial approximation is a reasonable assumption.) By the binomial approximation,
+		\begin{align*}
+		\frac{m}{r_H^2} + \frac{M}{r^2}\bigbracket{1 - \frac{r_H}{r}} = \frac{M}{r^2}\bigbracket{1 - \frac{r_H}{r}}^{-2} \approx \frac{M}{r^2}\bigbracket{1 + 2\frac{r_H}{r}}.
+		\end{align*}
+		
+		Multiplying throughout by $r_H^2 r^2$, we obtain
+		\begin{align*}
+		mr^2 + M\bigbracket{r_H^2 - \frac{r_H^3}{r}} \approx M\bigbracket{r_H^2 + 2\frac{r_H^3}{r}}.
+		\end{align*}
+		Rearranging yields
+		\begin{align*}
+		mr^2 \approx 3\frac{Mr_H^3}{r}.
+		\end{align*}
+		Therefore,
+		\begin{align*}
+		r_H \approx r\sqrt[3]{\frac{m}{3M}},
+		\end{align*}
+		as required.
+	\end{solution}
+	
+\fullwidth{
+	In Astronomy, any theory made must be checked in order to determine its validity. Checking typically consists of three steps:
+	\begin{enumerate}[leftmargin=12pt]
+		\item Ensuring it is mathematically consistent.
+		\item Comparison of the predicted results with real-world data.
+		\item Ensuring the assumptions made are valid.
+	\end{enumerate}
+
+	If a theory applied to a given scenario holds up to the above three parts, it is a valid theory to describe that scenario.
+	
+	Tables \ref{tbl10a} and \ref{tbl10b} list the distance in AU of several of Jupiter’s $79$ known moons and Saturn's $62$ known moons from their respective parent planets (as of $2018$). The `Position' column ranks the distance of the moon from Jupiter in increasing order. That is to say, a moon of Jupiter with position 1 is nearest to Jupiter, while a moon of Jupiter with distance 60 has 59 moons closer to Jupiter than itself.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\begin{tabularx}{0.9\textwidth}{@{}lXY@{}}
+				\toprule \textbf{Position} & \textbf{Moon} & \textbf{Semi-major axis (AU)}\\ \midrule
+				1 & Metis & $8.61\times 10^{-3}$\\
+				8 & Callisto & $1.26\times 10^{-2}$\\
+				27 & Orthosie & $1.37\times 10^{-1}$\\
+				53 & Kallichore & $1.54\times 10^{-1}$\\
+				70 & Hegemone & $1.58\times 10^{-1}$\\
+				78 & Megaclite & $1.65\times 10^{-1}$\\
+				\bottomrule
+			\end{tabularx}
+			\renewcommand{\figurename}{Table}
+			\caption{Moons of Jupiter}
+			\label{tbl10a}
+		\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+			\vspace*{-21pt}
+			\centering
+			\begin{tabularx}{0.9\textwidth}{@{}lXY@{}}
+				\toprule \textbf{Position} & \textbf{Moon} & \textbf{Semi-major axis (AU)}\\ \midrule
+				10 & Mimas & $1.24\times 10^{-3}$\\
+				22 & Titan & $8.16\times 10^{-3}$\\
+				48 & Hati & $1.32\times 10^{-1}$\\
+				57 & Fenrir & $1.47\times 10^{-1}$\\
+				62 & Fornjot & $1.64\times 10^{-1}$\\
+				\bottomrule
+			\end{tabularx}
+			\renewcommand{\figurename}{Table}
+			\caption{Moons of Saturn}
+			\label{tbl10b}
+		\end{subfigure}
+		\caption{Data on moons of Jupiter and Saturn}
+	\end{figure}
+}
+
+\vspace*{-10pt}
+\question[3] 
+	In (\ref{4a}) to (\ref{4c}), we investigated a simple theory under several assumptions and obtained an expression for the Hill radius. Let us call this Theory H (for Hill). 
+	
+	Based on the given data and the assumptions made, is Theory H valid? Explain your answer \textbf{clearly}.
+	\droppoints
+	\begin{solution}
+		It is not valid.
+		
+		\begin{itemize}
+			\item Assumptions:
+			\begin{itemize}
+				\item The assumption which fails is that of an isolated system. There are a number of outside factors exerting forces on the Sun-Jupiter and Sun-Saturn system. For example, pertubations by other bodies in the Solar System, radiation pressure, the solar wind, etc.
+			\end{itemize}
+			
+			\item Numerical:
+			\begin{itemize}
+				\item The numerical predictions do not coincide with the observed data.
+				
+				The Hill radius for Jupiter (use the formula sheet!) is approximately
+				\begin{align*}
+				r_H \approx 7.785\times 10^{11} \times \sqrt[3]{\frac{1.899\times 10^{27}}{3\times 1.989\times 10^{30}}} \approx 5.31514 \operatorname{m} \approx 0.35530 \operatorname{AU}.
+				\end{align*}
+				while the Hill radius for Saturn is
+				\begin{align*}
+				r_H \approx 1.433\times 10^{12} \times \sqrt[3]{\frac{5.685\times 10^{26}}{3\times 1.989\times 10^{30}}} \approx 6.54492 \operatorname{m} \approx 0.43750 \operatorname{AU}.
+				\end{align*}
+				
+				In both cases, it is clear that the orbits of the moons of both planets lie well within the Hill radius (at about half to one-third the Hill radius). Clearly this contradicts the predictions made by Theory H, in which we expect moons up to close to the Hill radius as gravitational attraction of the planet dominates.
+			\end{itemize}
+		\end{itemize}
+	\end{solution}
+		
+\fullwidth{
+	\subsection*{Part II: Working in the Age of Assumptions}
+	Assumptions are ultimately used to simplify matters. There are \textbf{two} general types of assumptions we make in Astronomy (and everyday life): assumptions used to simplify theories, and assumptions used to rule out possibilites.
+	
+	Regardless of type, the basic principles of using assumptions remain identical no matter the scenario, and are given in a short two-step process.
+	\begin{enumerate}[leftmargin=12pt]
+		\item Make assumptions.
+		\item Deduce the consequences of holding these assumptions.
+	\end{enumerate}
+
+The widespread use of Newtonian gravitation in place of general relativity is a classical example of the first sort of assumption. General relativity is mathematically daunting, whereas Newtonian gravitation provides a much simpler alternative, while being valid in most human scales.
+
+In this part, we will focus on the second type. It might \textit{sound} fancy, but this should be nothing new to you. If you have ever solved a question by thinking along the lines of `If this is true, then\dots nope, that can't be right\dots', you have made successful use of the second type of assumptions to rule out a case you were considering. In fact, using this sort of assumption to prove a conjecture, is called \textit{proof by contradiction}. Therein lies the strength of using assumptions. 
+
+The following questions can be broken down into cases. Whether you use the method of assumptions is up to you; but, if you do, remember that sometimes, \textit{all} cases have implications, and you need to weigh each case against the others.
+}
+
+\vspace*{-10pt}
+\question
+	When a satellite is `placed at a Lagrangian point', it is not actually placed \textit{at} the point itself. Rather, the satellite orbits the point. Satellites orbiting these points typically employ \textit{station-keeping}.
+	\begin{parts}
+		\part[1] Define station-keeping, and explain why it is needed.
+		\droppoints
+		\begin{solution}
+			Station-keeping refers to the process of keeping a satellite in a particular orbit via orbital manoeuvres by thruster burns.
+			
+			It is required because of pertubations of the satellite by external forces. For example, dynamical pertubations of an n-body system. Small pertubations of a satellite from the orbit can occur due to gravitational influences of other massive bodies.
+		\end{solution}
+		
+		\part[2] At the Sun-Earth $L_1$ and $ L_2 $ points, larger orbits are generally preferred. Give \textbf{one} reason why, for each point.
+		\droppoints
+		\begin{solution}
+			\textbf{$ L_1 $}:
+			There will be less solar interference with satellite-Earth communications.
+			
+			The idea is that if a smaller orbit is used, there will be more solar interference, as compared to further out. Observational capacity remains approximately the same, therefore a larger orbit is obviously preferred.
+			
+			\textbf{$ L_2 $}:
+			The satellite will spend more time outside Earth's shadow. This allows more time for solar panels to collect sunlight and provide power to the satellite.
+			
+			Compare this to a tighter energy budget for a smaller orbit. Regardless of the mission, energy is absolutely essential.
+		\end{solution}
+	\end{parts}
+
+\question[2]
+	Generally, in literature, astronomers use redshift values to describe the distances of \textit{extremely} distant objects like quasars and active galactic nuclei, but use terms of absolute distance (e.g. light years, kilometres, etc.) to describe distances of nearer objects. Why is this so?
+	\droppoints
+	
+	
+\fullwidth{
+	\vspace*{-10pt}
+	\subsection*{Part III: Tremulous Theories}
+	It is unfortunate, however, that sometimes we cannot help but assume certain facts to be true. We cannot freely move about in space-time to confirm every assumption we make! One of the most obvious examples underpins the $\Lambda$ Cold Dark Matter ($\Lambda$CDM) model, the standard model of the universe today.
+	
+	$\Lambda$CDM is referred to as the \textit{standard model} of Big Bang cosmology because it is the simplest model which accounts for cosmic microwave background radiation, large-scale structure of galaxy distribution, abundance of hydrogen, helium, and lithium in the universe, and accelerating expansion of the universe.
+	
+	There are other models based on differing assumptions, but a standard assumption is that of the \textit{cosmological principle}.
+}
+\vspace*{-10pt}
+\question[1]\label{4g}
+	The cosmological principle claims that the universe satisfies \textit{homogeneity} and \textit{isotropy}. Define these two terms.
+	\droppoints
+	\begin{solution}
+		\textbf{Homogeneity}: Observers at any location in the universe will have the same observational evidence.
+		
+		\textbf{Isotropy}: The same observational evidence is available in any direction of measurement.
+	\end{solution}
+	
+\filbreak
+\question[2]\label{q4h}
+	The cosmological principle \textbf{cannot} be verified today. Of the two conditions in (\ref{4g}), it is impossible to \textit{truly} assess the validity of one of them. Yet, we can still argue that the cosmological principle is a reasonable assumption.
+	
+	Explain which condition \textbf{can} be assessed for validity today, and explain why the other condition \textbf{cannot}.
+	\droppoints
+	
+	\textbf{HINT}: You may find a diagram helpful.
+	\begin{solution}
+		Homogeneity is impossible to assess, while isotropy is possible to assess.
+		
+		The answer for homogeneity is best intuited with a light cone.
+
+		As observers from Earth, we only have access to one cosmic location and thus one light cone. It is impossible for us to observe aspects of the universe outside our light cone. Therefore we cannot assess homogeneity.
+		
+		Isotropy, however, can be assessed, since it relies on \textit{direction} of measurement rather than location. From Earth, we have access to many directions, allowing us to assess isotropy.
+	\end{solution}
+	
+\setcounter{question}{9}
+\question[2]
+	For the assessable condition identified in (\ref{q4h}), there are a number of observations which, taken together, strongly imply it. Give \textbf{three} such observations.
+	\droppoints
+	
+	\textbf{NOTE}: While explanations for each observation are \textit{not} required and will \textit{not} be awarded any marks, you may include explanations if you feel that you need to explain your answers to increase the chance of acceptance.
+	\begin{solution}
+		\begin{itemize}
+			\item Consistent matter\textbf{/energy} distribution \textbf{(e.g. CMB, GRB, etc.)}
+			\item Consistent trend in matter (e.g. galaxies, galaxy clusters) velocity away from us, which is due to universal expansion.
+			\item Consistent gravitational lensing by large-scale objects.
+			\item Consistent measurements of angular diameter distance, i.e. objects of the same absolute size appear smaller with increasing distance. (This one is rather interesting. Beyond approximately $z = 1.5$, a further object will in fact appear \textit{larger}.)
+		\end{itemize}
+	\end{solution}
+	
+\question[1]
+	Hence, or otherwise, suggest why the non-assessable condition identified in (\ref{q4h}) is a reasonable assumption.
+	\droppoints
+	\begin{solution}
+		If we observe consistent isotropy over time, it suggests that the universe in our light cone has evolved in a matter consistent with that of a homogeneous universe. One may assume this is true at all points of the universe (via the Copernician principle, which is a weaker assumption than the cosmological principle).
+		
+		A slightly more mathematical answer (which is NOT expected) involves tests on the FLRW metric. In the loosest possible layman's terms, if certain conditions on isotropy hold in a region, then the FLRW metric holds in that region. Since homogeneity implies the FLRW metric, tests for (non-)violation of this metric (e.g. dark energy measurements from Type 1a supernovae) could be construed as an argument for homogeneity together with the Copernician principle.
+	\end{solution}
+\end{questions}
+
+\newpage
+\section{Questions of Galactic Proportions}
+\subsection*{Introduction}
+Galaxies---how they so fascinate the imagination! From Star Wars to Doctor Who, science fiction tells tales of aliens and travels throughout various galaxies in the Universe. Yet, in these shows, little consideration is usually given to the \textit{science} of the galaxies themselves. Galaxies are fascinating, and the science is so much more than that.
+
+In this question, we will investigate what we can learn from galaxies.
+
+\subsection*{Part I: The Hypes and Types of Galaxies}
+
+To begin with, there are several different types of galaxies, and we generally categorise them into the following:
+\begin{itemize}
+	\item \textit{spiral galaxies}, which have a flat galactic disk with spiral arms and a bulge at the middle, called the galactic centre;
+	\item \textit{elliptical galaxies}, which are ellipsoidal or spheroidal, rather like a rugby ball or an M\&M\texttrademark chocolate;
+	\item \textit{irregular galaxies}, which have no discernible structure, and hence do not fit in either of the former.
+\end{itemize}
+In fact, half to two-thirds of all spiral galaxies have a barred structure, and we call them \textit{barred spiral galaxies}. Our own Milky Way is such a barred spiral.
+
+The visual classification, as it turns out, is not simply for \textit{show} {\footnotesize(pardon the pun)}. Indeed, galaxies of each class tend to display other distinctive properties characteristic of the class. Table \ref{5a} lists some properties for spiral and elliptical galaxies.
+\begin{figure}[H]
+	\centering
+	\begin{tabularx}{0.8\textwidth}{@{}lXX@{}}
+		\toprule
+		\textbf{Characteristic} & \textbf{Spiral} & \textbf{Elliptical}\\ \midrule
+		Shape & Flat disk with arms and central bulge & Spheroid/Ellipsoid\\
+		Rotation & Rotating disk & Radial orbits about the centre\\
+		Interstellar gas & Lots & Little\\
+		Stellar ages & Mixed & Old\\
+		\bottomrule
+	\end{tabularx}
+	\renewcommand{\figurename}{Table}
+	\caption{Some characteristics of spiral and elliptical galaxies}
+	\label{5a}
+\end{figure}
+
+\begin{questions}
+\question[2]
+	Differentiate, if possible, between spiral and elliptical galaxies, in terms of \textbf{star formation rates}, and \textbf{colour}.
+	\droppoints
+	\begin{solution}
+		Spiral -- High/present in significant quantities. Elliptical -- low.
+		
+		Spiral galaxies have mixed stellar ages -- evidence of stellar formation. They also have lots of interstellar gas to fuel formation.
+		
+		Elliptical galaxies have old stellar ages -- evidence of little stellar formation. Also, little intersellar gas, so formation will be extremely limited.
+		
+		Spiral -- bluer. Elliptical -- redder.
+		
+		Generally, elliptical galaxies have higher composition of older stars as compared to spirals, and older stars appear redder than newer stars. Consequently, spirals should generally appear bluer, and ellipticals redder.
+	\end{solution}
+	
+\question[2]
+	It is a commonly said that spiral galaxies are dominant throughout the universe, since nearly four-fifths of observed galaxies are spiral. However, deep sky surveys show a larger proportion of elliptical galaxies as compared to spiral galaxies, suggesting elliptical galaxies are more dominant instead. Resolve this apparent paradox.
+	\droppoints
+	\begin{solution}
+		The solution is that ellipticals are probably more dominant.
+		
+		The catch with the spirals making up nearly $80\%$ of observed galaxies is due to observational bias. Spirals are brighter, generally, so they are easier to observe, and so many more are documented as compared to ellipticals. Deep sky surveys are less affected by this bias as it surveys much dimmer objects as well, so they are probably more accurate on this point.
+	\end{solution}
+	
+\fullwidth{
+	In the morphology of galaxies, there is also the S0 type, also known as lenticular galaxies. They have commonalities with both elliptical and spiral galaxies. Lenticular galaxies are commonly characterised as a disk with a central bulge, but \textit{without} arms. They share stellar formation and age features with elliptical galaxies, but may contain plenty of dust, unlike their elliptical counterparts. One might imagine that if we view a lenticular galaxy edge-on, it can be difficult to distinguish it from an elliptical galaxy. The origins of these galaxies are not yet well-understood. Common theories include fading of spiral arms and galaxy mergers.
+	
+	Table \ref{5b} lists data on approximate compositions of different cluster types by galaxy class:
+	\begin{figure}[H]
+		\centering
+		\begin{tabularx}{0.7\textwidth}{@{}Xlcr@{}}
+			\toprule
+			\textbf{Cluster Type} & \textbf{Elliptical (E)} & \textbf{S0} & \textbf{Spiral (Sp)}  \\ \midrule
+			Regular & 35\% & 45\% & 20\%\\
+			Intermediate (Spiral-poor) & 20\% & 50\% & 30\%\\
+			Irregular (Spiral-rich) & 15\% & 35\% & 50\%\\
+			Field & 10\% & 20\% & 70\%\\
+			\bottomrule
+		\end{tabularx}
+		\caption{Typical galactic content of galaxy clusters ($r \lesssim \SI{1.5e-1}{\mega\parsec} $). The \textit{field} refers to the collection of gravitationally isolated galaxies, i.e. those galaxies not belonging to any cluster.}
+		\label{5b}
+	\end{figure}
+}
+
+\question[2] 
+	Account for the main difference(s) in the composition of galaxy clusters as compared to the field. 
+	\droppoints
+	\begin{solution}
+		The main differences are that the percentages of elliptical and S0 galaxies is higher than the field, and the percentage of spirals is much lower than the field.
+		
+		This can be explained since clusters have numerous gravitationally bound galaxies in a small (relatively speaking) space. This increases the rate of galaxy collisions, which facilitate the formation of ellipticals and maybe S0 galaxies. In contrast, the field consists of isolated galaxies, thus the rate of collision is much lower, so lesser E and S0 galaxies form.
+	\end{solution}
+	
+\question[1]
+	Hence, or otherwise, suggest a measurable quantity (e.g. mass, luminosity, etc.) of clusters correlated with the $\frac{\text{E}+\text{S}0}{\text{Sp}}$ ratio of clusters. Explain your answer.
+	\droppoints
+	\begin{solution}
+		Galaxy density, i.e. galaxies per megaparsec cubed (or similar).
+		
+		Pretty self-explanatory, actually. Higher galaxy density means higher E and S0, and lower Sp due to higher collision rates, so we expect it to be correlated with the $\frac{\ce{E}+\ce{S}0}{\ce{Sp}}$ ratio.
+		
+		\textbf{Other well-reasoned answers are also accepted.}
+	\end{solution}
+	\vspace*{-10pt}
+	
+\fullwidth{
+	\subsection*{Part II: Round and Round and Round We Go}
+	One of the most well-known pieces of evidence of dark matter are the \textit{rotation curves} of galaxies throughout the universe. A rotation curve of an $N$-body system orbiting about a given axis is a graph of the radial velocity of the bodies against distance from the axis. For example,
+	\begin{itemize}[leftmargin=10pt]
+		\item the plot of radial velocity of the planets ($N$ bodies) around the Sun (axis) against distance;
+		\item the plot of radial velocites of stars in a galaxy ($N$ bodies) around the centre of the galaxy (axis) against radial distance from the centre of the galaxy.
+	\end{itemize}
+	It is this second example we are concerned with. Of course, it is virtually impossible to resolve individual stars in an external galaxy, so observations are made by regions instead.
+}
+
+\question[2] 
+	The HI line, also known as the \SI{21}{\centi\metre} line is a powerful tool used to plot rotation curves of spiral galaxies. Explain \textbf{one} advantage and \textbf{one} disadvantage of using this method to plot rotation curves.
+	\droppoints
+	\begin{solution}
+		Advantages:
+		\begin{itemize}
+			\item Most of the interstellar media of the spiral galaxies is cold neutral hydrogen gas cloud lying in the galactic disk, giving a good representation of rotation throughout the disk.
+			\item Gas cloud usually extends significantly beyond the visible disk (up to 4 times further, but typically about 2 times further), allowing for measurements of rotational velocities beyond the traditional visible disk.
+			\item Average column density of neutral hydrogen is about the same in all spiral galaxies regardless of surface brightness (postulated to be due to self-shielding), giving a standard base to measure rotation of spiral galaxies with.
+			\item DO NOT ACCEPT STANDALONE: The \ce{HI} line suffers little absorption in spiral galaxies. (Remark: this is true, but has little bearing on the question unless combined with another reason, e.g. the ones given above. Combining these reasons will be looked upon favourably.)
+		\end{itemize}
+		
+		Disadvantages:
+		\begin{itemize}
+			\item Lower resolution than other gases with shorter emission wavelengths, e.g. \ce{CO}, so the mapping has poorer spatial resolution as compared to detections in smaller wavelengths. This is especially true nearer to the galactic centre.
+			\item Nearer to the galactic centre, hydrogen gas does not dominate -- instead, (hotter) molecular gas forms most of the gas. Thus \ce{HI} maps of galactic centres are generally poor.
+			\item It is necessary to observe at high resolutions. Rotation curves from \ce{HI} line observations at low resolutions may have poor correlation with optical velocities (see e.g. Rubin, 1989 on Virgo spirals). There is (quote) excellent correlation at high resolution.
+		\end{itemize}
+	\end{solution}
+
+\filbreak
+\fullwidth{
+	A particularly well-known phenomenon of galactic rotation curves diverging from Keplerian orbital dynamics, is illustrated in Figure \ref{5c}. The $ x $- and $ y $-axes refer to distance from a given galactic nucleus (i.e. galactic orbital radius) and stellar velocity, respectively.  
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{Graphics/Questions/QOGP/qogp}
+		\caption{Expected Keplerian rotation curve (A) and \textit{actual} rotation curve (B) for spiral galaxies}
+		\label{5c}
+	\end{figure}
+	
+	\vspace*{-10pt}
+}
+
+\question[4] 
+	There are two main features of the Keplerian graph: the initial rise, and the eventual fall. Explain \textbf{both} observations.
+	\droppoints
+	\begin{solution}
+		The initial rise follows rigid body rotation and is explained by the close proximity of stars in the central bulge. Due to the high stellar density, stars interact with each other extremely often and therefore tend to behave more like vibrating atoms rather than a differential gas. Ergo, it rotates like a rigid body, so rigid body rotation it is. For rigid body rotation, $v\propto r$, as can be easily proven since the period $T = \frac{2\pi r}{v}$ is constant, so $v = \frac{2\pi}{T}r$, i.e. $v\propto r$.
+		
+		The subsequent drop is due to aforementioned Keplerian rotation. Stars revolve about the galactic centre, now. Equating centripetal force with gravitational force, we have
+		\begin{align*}
+		\frac{mv^2}{r} = \frac{GMm}{r^2},
+		\end{align*}
+		i.e. $v = \sqrt{\frac{GM}{r}}$, or $v\propto r^{-\frac{1}{2}}$. This relationship characterises Keplerian rotation. It is expected to hold since beyond the bulge, stellar density drops sharply, and the effects of neighbouring stars are much lesser. So rotation starts to be expected to mimic those by planets.
+		
+		This sharp drop in stellar density also explains why the Keplerian effect dominates the increase in mass inside the orbital radius -- the increase in (visible) mass is far too low to have significant impact on the Keplerian effect.
+	\end{solution}
+	
+\fullwidth{
+		The higher actual radial velocity suggests that more mass is present than what is observable. The unobservable component is called \textit{dark matter}. 
+		
+		Spiral galaxies are said to be surrounded by a blob of dark matter, called the \textit{dark matter halo}. The determining equations for the shape of the dark matter halo are rather complicated (for this competition, at least), but suffice to say the blob takes the shape of an oblate spheroid, or a rugby ball.
+		
+		However, \textit{you} don't have time to investigate an oblate spheroid, so we're going to assume the blob is spherical, just like physicists like to assume everything is a sphere, a point mass, a light string, or a frictionless surface.
+		
+		The Navarro-Frenk-White (NFW) profile is a density profile commonly used to model dark matter halos. It is valid for isolated halos. Mathematically, the NFW profile for spherical dark matter halos is
+		\begin{align*}
+		\rho(r) = \frac{\rho_0}{\frac{r}{R_s}\left(1+\frac{r}{R_s}\right)^2},
+		\end{align*}
+		where
+		\begin{itemize}
+			\item $\rho(r)$ is the density of dark matter at radius $r$ from the centre of the halo, and
+			\item $\rho_0$ and the scale radius $R_s > 0$ are constants determined by the system in consideration, chosen to fit the profile curve to the observed data. Note that $R_s$ is \textit{not} the radius of the galaxy.
+		\end{itemize}
+	
+		\filbreak
+		In particular, $\rho_0$ is related to the critical density of the Universe $\rho_c = \frac{3H_0^2}{8\pi G}$, where $H_0$ is the Hubble constant today and $G$ is the gravitational constant. The constant $\rho_0$ is given by
+		\begin{align*}
+		\rho_0 = \delta_0\rho_c = \frac{200}{3} \left(\frac{c^3}{\ln (1+c) - \frac{c}{1+c}}\right)\rho_c,
+		\end{align*}
+		where $c$ is known as the \textit{concentration parameter}, and is determined by the system in consideration.
+		
+		This model is not without its problems. One of the main problems of this model is the fact that the total mass in the halo is predicted to be infinite, which is physically impossible.
+}
+	
+\question[4]
+	By considering the mass $M(R)$ of dark matter contained in a general sphere of radius $R$, prove that the model predicts that $\lim\limits_{R\to \infty} M(R) = \infty$, i.e. prove that $M(R) \to \infty$ as $R \to \infty$.	
+	\droppoints
+	\begin{solution}
+		Since $\rho$ is the density of dark matter, it follows that in a spherical shell at radius $r$, the mass of dark matter is
+		\begin{align*}
+		m(r) &= 4\pi r^2 \frac{\rho_0 R_s^3}{r\bigbracket{R_s+r}^2} \Delta r\\
+		&= \frac{4\pi r \rho_0 R_s^3}{\bigbracket{R_s+r}^2} \Delta r.
+		\end{align*}
+		The total mass in a sphere of radius $R$, then, is
+		\begin{align*}
+		M(R) = 4\pi \rho R_s^3 \int_0^R \frac{r}{\bigbracket{R_s+r}^2} \dif r.
+		\end{align*}
+		
+		One recognises the obvious partial fraction decomposition
+		\begin{align*}
+		\frac{r}{\bigbracket{R_s+r}^2} &= \frac{R_s + r}{\bigbracket{R_s+r}^2} - \frac{R_s}{\bigbracket{R_s+r}^2}\\
+		&= \frac{1}{R_s+r} - \frac{R_s}{\bigbracket{R_s+r}^2}.
+		\end{align*}
+		This admits the easy integration
+		\begin{align*}
+		M(R) &= 4\pi \rho R_s^3 \int_0^R \frac{r}{\bigbracket{R_s+r}^2} \dif r\\
+		&= 4\pi \rho R_s^3 \int_0^R \frac{1}{R_s+r} - \frac{R_s}{\bigbracket{R_s+r}^2} \dif r\\
+		&= 4\pi \rho R_s^3\bigsquarebracket{\ln (R_s + r) + \frac{R_s}{R_s + r}}_0^R\\
+		&= 4\pi \rho R_s^3\bigbracket{\ln (R_s+R) + \frac{R_s}{R_s + R} - \ln R_s - 1}.
+		\end{align*}
+		Since $R_s > 0$, as $R\to\infty$ it is clear that $\ln (R_s+R)\to\infty$ and $\frac{R_s}{R_s + R}\to 0$. But this means $M(R)\to\infty$.
+	\end{solution}
+	
+\fullwidth{
+	Thanks to this problem, we need to define the edge of the halo, i.e. a `cut-off point', so to speak. Typically, the virial radius $R_{200} = cR_s$ is used, i.e. we `define' the halo to have radius $R_{200}$. Note that typically, $ 4 \leq c \leq 40 $, and the Milky Way itself has $ 10 \leq c \leq 15 $.
+	
+	One other problem is known to arise with the NFW profile (and with many other commonly-used models). Let us call this \textit{Problem X}. The fact is, the rotation curves of most observed dwarf galaxies imply that they have flat central dark matter density profiles. Problem X arises from consideration of this particular fact of dwarf galaxies. 
+}
+
+\question[3] 
+	For dwarf galaxies, we may assume $R_s \approx \SI{1}{\kilo\parsec}$ and $c \approx 7$. Suggest what Problem X is. Explain your reasoning.
+	\droppoints
+	\begin{solution}
+		Problem X, also known as the \textit{core-cusp problem} or the \textit{cuspy halo problem}, is the issue with the behaviour of the NFW profile for low-mass galaxies. Specifically, the profile predicts that density of dark matter sharply increases with small $r$ as $r\to 0$, in contrast with the observed flat dark matter density profile of dwarf galaxies.
+		
+		Dwarf galaxies are on the order of $10\operatorname{kpc}$ diameter. For the range $0 < r \leq 5\operatorname{kpc}$, the graph of $\rho$ against $r$ in the NFW profile is most certainly not flat. Ignoring $\rho_0$ and computing the graph of
+		\begin{align*}
+		y = \frac{1}{r(1+r)^2}
+		\end{align*}
+		yields a noticeable negative gradient starting from about $r=3$ and increasing steeply from $r=1$. So for dwarf galaxies, we would expect about $60\%$ of the galaxy to exhibit a noticeably decreasing $\rho$ as $r$ increases, which contradicts what we know of dwarf galaxies!
+		
+		Anyway, the salient point is that it is enough to discuss the shape of the profile as $r\to 0$, with mention of the main graphical feature leading to the contradiction (and hence suggesting what Problem X is), and why indeed it is a contradiction. It is not necessary to perform the blatant substitution of values to compute $\rho_0$ (since it is a constant).
+		
+		Also, other well-reasoned answers are certainly welcome.
+	\end{solution}
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
