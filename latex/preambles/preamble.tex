@@ -98,6 +98,7 @@
 \usepackage[noabbrev]{cleveref}
 
 %%%%% MISCELLANEOUS %%%%%
+\usepackage{pgfkeys}
 \usepackage{etoolbox}
 \usepackage{xpatch}
 \usepackage[useregional,calc]{datetime2}
@@ -317,7 +318,6 @@
 %%%%% ASTROCHALLENGE SETUP AND MACROS %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%% ASTROCHALLENGE PAPER DATE %%%%%
 \providecommand*{\setacpaperdate}[1]{\DTMsavedate{theacpaperdate}{#1}}
 \providecommand*{\acpaperdate}{\DTMusedate{theacpaperdate}}
@@ -325,20 +325,33 @@
 %%%%% ASTROCHALLENGE SMALL CAPS %%%%%
 \providecommand{\astrochallenge}{\textbf{\textssc{AstroChallenge \figureversion{osf}\DTMfetchyear{theacpaperdate}}}}
 
-%%%%% {CATEGORY} {ROUND} ROUND %%%%%
+%%%%% AUTOMATIC CATEGORY AND ROUND WITH KEY-VALUE SYSTEM %%%%%
+\providebool{ismcq}
+\providebool{isteam}
+\providebool{isobs}
+\providebool{isdaq}
+
 \pgfkeys{
-	/ac/.is family, /ac,
+	/ac/.is family, /ac/.cd,
 	category/.is choice,
 	round/.is choice,
-	category/jnr/.code={\edef\category{Junior}},
-	category/snr/.code={\edef\category{Senior}},
-	category/junior/.code=\pgfkeysalso{category/jnr},
-	category/senior/.code=\pgfkeysalso{category/snr},
-	round/mcq/.code={\edef\round{MCQ}},
-	round/team/.code={\edef\round{Team}},
-	round/obs/.code={\edef\round{Observation}}
-	round/MCQ/.code=\pgfkeysalso{round/mcq},
-	round/Team/.code=\pgfkeysalso{round/team},
+	% DEFINE ACTIONS FOR CATEGORY
+	/ac/category/.cd,
+	jnr/.code={\edef\category{Junior}},
+	snr/.code={\edef\category{Senior}},
+	junior/.code=\pgfkeysalso{category/jnr},
+	senior/.code=\pgfkeysalso{category/snr},
+	% DEFINE ACTIONS FOR CHOICES
+	/ac/round/.cd,
+	mcq/.code={\edef\round{MCQ}\booltrue{ismcq}},
+	team/.code={\edef\round{Team}\booltrue{isteam}},
+	obs/.code={\edef\round{Observation}\booltrue{isobs}},
+	daq/.code={\edef\round{Data Analysis}\booltrue{isdaq}},
+	% ALTERNATIVE NAMES
+	MCQ/.code=\pgfkeysalso{round/mcq},
+	Team/.code=\pgfkeysalso{round/team},
+	Obs/.code=\pgfkeysalso{round/obs},
+	DAQ/.code=\pgfkeysalso{round/daq},
 }
 \providecommand*{\setcatround}[1]{\pgfqkeys{/ac}{#1}}
 \providecommand*{\catround}{\textbf{\textssc{\category{} \round{} Round}}}
@@ -368,8 +381,64 @@
 	}
 }
 
+%%%%% ASTROCHALLENGE INSTRUCTIONS: MCQ %%%%%
+\providecommand*{\acmcqinst}{
+	\begin{enumerate}[itemsep=8pt]
+		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+		\item Do \textssc{\textbf{NOT}} turn over this page until instructed to do so.
+		\item You have \textbf{2 hours} to attempt all questions in this paper. If you think there is more than one correct answer, choose the most correct answer.
+		\item At the end of the paper, submit this booklet together with your answer script.
+		\item Your answer script should clearly indicate your name, school, and team.
+		\item It is \textit{your} responsibility to ensure that your answer script has been submitted.
+	\end{enumerate}
+}
+
+%%%%% ASTROCHALLENGE INSTRUCTIONS: TEAM %%%%%
+\providecommand*{\acteaminst}{
+	\begin{enumerate}[itemsep=8pt]
+		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+		\item Do \textbf{NOT} turn over this page until instructed to do so.
+		\item You have \textbf{2 hours} to attempt all questions in this paper.
+		\item At the end of the paper, submit this booklet together with your answer script.
+		\item Your answer script should clearly indicate your name, school, and team.
+		\item It is your responsibility to ensure that your answer script has been submitted.
+		\item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
+		\item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numbering of (i).
+	\end{enumerate}
+}
+
+%%%%% ASTROCHALLENGE INSTRUCTIONS: DAQ %%%%%
+\providecommand*{\acdaqinst}{
+	In this part of \textbf{\textsc{AstroChallenge \figureversion{osf}\the\year}}, you will work with a moderately large (approx. \num{4000} points) data set. You will process this data set, analyse it, observe trends, and draw conclusions. \textbf{There are no right or wrong answers}; you will be marked solely on the quality of your analysis, even if your statistical methods are incorrect.
+
+	We \textbf{strongly} recommend you use industry-standard tools like \texttt{Microsoft Excel}\texttrademark, \texttt{RStudio} or various \texttt{Python} libraries to process the data.
+}
+
+%%%%% ASTROCHALLENGE INSTRUCTIONS: OBS %%%%%
+\providecommand*{\acobsinst}{
+	\begin{enumerate}[itemsep=8pt]
+		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+		\item Do \textbf{NOT} turn over this page until instructed to do so.
+		\item You have \textbf{1 hour and 30 minutes} to attempt all questions in this paper.
+		\item At the end of the paper, submit this booklet together with your answer script.
+		\item Your answer script should clearly indicate your name, school, and team.
+		\item It is your responsibility to ensure that your answer script has been submitted.
+	\end{enumerate}
+}
+
 %%%%% ASTROCHALLENGE INSTRUCTIONS %%%%%
-\providecommand*{\acinstructions}[1]{
+\providecommand*{\acinstructions}{
+	\ifbool{ismcq}{\acmcqinst}{
+		\ifbool{isteam}{\acteaminst}{
+			\ifbool{isdaq}{\acdaqinst}{
+				\ifbool{isobs}{\acobsinst}{}
+			}
+		}
+	}
+}
+
+%%%%% ASTROCHALLENGE INSTRUCTION BOX %%%%%
+\providecommand*{\acinstbox}{
 	\vspace*{20pt}
 	\fbox{
 		\fbox{
@@ -380,14 +449,8 @@
 				\end{center}
 				\vspace*{10pt}
 
-				\begin{enumerate}[itemsep=8pt]
-					\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-					\item Do \textssc{\textbf{NOT}} turn over this page until instructed to do so.
-					\item You have \textbf{2 hours} to attempt all questions in this paper. If you think there is more than one correct answer, choose the most correct answer.
-					\item At the end of the paper, submit this booklet together with your answer script.
-					\item Your answer script should clearly indicate your name, school, and team.
-					\item It is \textit{your} responsibility to ensure that your answer script has been submitted.
-				\end{enumerate}
+				\acinstructions{}
+
 				\vspace*{5pt}
 			}
 		}
@@ -408,7 +471,7 @@
 
 			\acpaperdate{}
 
-			\acinstructions{}
+			\acinstbox{}
 
 			\vspace*{20pt}
 
