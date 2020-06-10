@@ -181,7 +181,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%% CHOICES ON ONE PAGE %%%%%
 \BeforeBeginEnvironment{choices}{\par\nopagebreak\minipage{\linewidth}}
 \AfterEndEnvironment{choices}{\endminipage}
@@ -272,6 +271,10 @@
 	\fi{}
 }
 \providerobustcmd*{\envupspace}{\ifanswers{\vspace{20pt}}}
+
+%%%%% REMOVE SPACES FROM EnvFullwidth command
+\BeforeBeginEnvironment{EnvFullwidth}{\vspace{-10pt}}
+\AfterEndEnvironment{EnvFullwidth}{\vspace{-35pt}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
