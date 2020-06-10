@@ -1,0 +1,52 @@
+\documentclass[british,addpoints]{exam}
+
+%%%%% MUST INCLUDE THIS FILE. %%%%%
+\input{../preambles/preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONT SELECTION
+%
+% DEFAULT TO OPTION font=lm FOR COMPATIBILITY. USE font=mpro ONLY IF 'MinionPro'
+% PACKAGE INSTALLED AND CONFIGURED CORRECTLY. font=mpro IS RECOMMENDED TO 
+% TYPESET THE PAPER; CONTACT THE AUTHOR FOR FONT INSTALLATION FILES.
+%
+% SOME THINGS DO NOT WORK WITH font=lm, SUCH AS BOLD SMALLCAPS, ETC.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setfont{font=lm}
+
+%%%%% AC PAPER DATE FORMAT: YYYY-MM-DD. SET APPROPRIATELY.
+\setacpaperdate{2020-12-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AC CATEGORY AND ROUND SELECTION
+%
+% OPTIONS AVAILABLE
+% category=
+% jnr/junior,
+% snr/senior
+%
+% round=
+% mcq,team,daq
+%
+% SET OPTIONS SIMILAR TO EXAMPLE BELOW.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcatround{category=snr, round=daq}
+
+\renewcommand{\thesubsection}{Part \Roman{subsection}:}
+
+\begin{document}
+%%%%% AC COVER PAGE. LEAVE THIS COMMAND IN.
+\accoverpage{}
+
+\begin{questions}
+	% ENTER POINTS WITHIN SQUARE BRACKETS, AND USE \droppoints{} COMMAND TO DISPLAY MARKS
+	% IN RIGHT MARGIN. 
+	% 
+	% REFER TO 'exam' DOCUMENT CLASS DOCUMENTATION FOR MORE INFORMATION:
+	% http://mirrors.ctan.org/macros/latex/contrib/exam/examdoc.pdf
+	\question[]{
+		
+	}
+\end{questions}
+
+\end{document}
