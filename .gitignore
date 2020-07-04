@@ -1,3 +1,5 @@
 latex/proposals
 latex/typeset
 latex/graphics/questions
+latex/papers/*
+!latex/papers/AC_template.tex
