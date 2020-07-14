@@ -12,34 +12,34 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \pgfkeys{
-	/ac/.is family, /ac/.cd,
-	font/.is choice,
-	font/lm/.code={
-			\usepackage{lmodern}
-			\usepackage{amsfonts,amssymb}
-			\providecommand{\tablining}{}
-			\providecommand{\propold}{}
-			% \renewcommand{\textssc}[1]{\textsc{#1}}
-			% \newcommand{\boldsmallcaps}[1]{{\fontfamily{cmr}\textsc{\textbf{#1}}}}
-			\usepackage{inconsolata}
-		},
-	font/mpro/.code={
-			\usepackage{MnSymbol}
-			\usepackage[
-				minionint,
-				lf,
-				mathtabular,
-				loosequotes,
-				swash,
-				opticals,
-				footnotefigures]{MinionPro}
-			\providecommand{\tablining}{\figureversion{tab}}
-			\providecommand{\propold}{\figureversion{osf}}
-			\newcommand{\boldsmallcaps}[1]{\textssc{\textbf{#1}}}
-			\usepackage{inconsolata}
-		},
-	font/lmodern/.code=\pgfkeysalso{font/lm},
-	font/minionpro/.code=\pgfkeysalso{font/mpro},
+    /ac/.is family, /ac/.cd,
+    font/.is choice,
+    font/lm/.code={
+        \usepackage{lmodern}
+        \usepackage{amsfonts,amssymb}
+        \providecommand{\tablining}{}
+        \providecommand{\propold}{}
+        % \renewcommand{\textssc}[1]{\textsc{#1}}
+        % \newcommand{\boldsmallcaps}[1]{{\fontfamily{cmr}\textsc{\textbf{#1}}}}
+        \usepackage{inconsolata}
+    },
+    font/mpro/.code={
+        \usepackage{MnSymbol}
+        \usepackage[
+            minionint,
+            lf,
+            mathtabular,
+            loosequotes,
+            swash,
+            opticals,
+            footnotefigures]{MinionPro}
+        \providecommand{\tablining}{\figureversion{tab}}
+        \providecommand{\propold}{\figureversion{osf}}
+        \newcommand{\boldsmallcaps}[1]{\textssc{\textbf{#1}}}
+        \usepackage{inconsolata}
+    },
+    font/lmodern/.code=\pgfkeysalso{font/lm},
+    font/minionpro/.code=\pgfkeysalso{font/mpro},
 }
 \providerobustcmd*{\setfont}[1]{\pgfqkeys{/ac}{#1}}
 \usepackage{amsmath}
@@ -61,13 +61,13 @@
 %%%%% SCIENCE FORMATTING %%%%%
 \usepackage{physics}
 \usepackage[
-	arc-separator = \,,
-	retain-explicit-plus,
-	%inter-unit-product =\cdot,
-	detect-weight=true,
-	detect-family=true,
-	range-phrase=--,
-	range-units=single
+    arc-separator = \,,
+    retain-explicit-plus,
+    %inter-unit-product =\cdot,
+    detect-weight=true,
+    detect-family=true,
+    range-phrase=--,
+    range-units=single
 ]{siunitx}
 \usepackage[version=4]{mhchem}
 \usepackage[makeroom]{cancel}
@@ -81,39 +81,39 @@
 \usepackage{pgfplots}
 \usepackage{pdfpages}
 \usepackage[
-	justification=centering,
-	labelfont={small,bf},
-	font={small}
+    justification=centering,
+    labelfont={small,bf},
+    font={small}
 ]{caption}
 \usepackage{subcaption}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usetikzlibrary{
-	calc,
-	arrows,
-	arrows.meta,
-	positioning,
-	decorations.pathreplacing,
-	decorations.markings,
-	decorations.text,
-	calligraphy,
-	pgfplots.dateplot
+    calc,
+    arrows,
+    arrows.meta,
+    positioning,
+    decorations.pathreplacing,
+    decorations.markings,
+    decorations.text,
+    calligraphy,
+    pgfplots.dateplot
 }
 \pgfplotsset{compat=1.17}
 \usepackage[outline]{contour}
 \contourlength{1pt}
 \newcommand*\circled[1]{
-	\begin{tikzpicture}[baseline=(char.base)]
-		\node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
-	\end{tikzpicture}
+    \begin{tikzpicture}[baseline=(char.base)]
+	    \node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
+    \end{tikzpicture}
 }
 \tikzset{
-	mid arrow/.style={postaction={decorate,decoration={
-							markings,
-							mark=at position .15 with {\arrow[#1]{stealth}}
-						}}},
-	>=stealth
+    mid arrow/.style={postaction={decorate,decoration={
+                markings,
+                mark=at position .15 with {\arrow[#1]{stealth}}
+            }}},
+    >=stealth
 }
 
 %%%%% REFERENCES AND LINKS %%%%%
@@ -169,10 +169,10 @@
 \Crefname{subpart}{}{}
 
 \hypersetup{
-	colorlinks   = true,            %Colours links instead of ugly boxes
-	urlcolor     = NavyBlue,        %Colour for external hyperlinks
-	linkcolor    = Magenta,         %Colour of internal links
-	citecolor    = Aquamarine       %Colour of citations
+    colorlinks   = true,            %Colours links instead of ugly boxes
+    urlcolor     = NavyBlue,        %Colour for external hyperlinks
+    linkcolor    = Magenta,         %Colour of internal links
+    citecolor    = Aquamarine       %Colour of citations
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -192,29 +192,29 @@
 
 %%%%% POINTS FORMATTING %%%%%
 \renewcommand{\questionshook}{
-	\setlength{\rightpointsmargin}{1.75cm}
-	\setlength{\itemsep}{30pt}
+    \setlength{\rightpointsmargin}{1.75cm}
+    \setlength{\itemsep}{30pt}
 }
 
 %%%%% QUESTION/PART/SUBPART INDENTATION %%%%%
 \renewcommand{\partshook}{
-	\renewcommand\makelabel[1]{\rlap{##1}\hss}
-	% \setlength{\itemsep}{6pt}
+    \renewcommand\makelabel[1]{\rlap{##1}\hss}
+    % \setlength{\itemsep}{6pt}
 }
 
 \renewcommand{\subpartshook}{
-	\renewcommand\makelabel[1]{\rlap{##1}\hss}
-	% \setlength{\itemsep}{6pt}
+    \renewcommand\makelabel[1]{\rlap{##1}\hss}
+    % \setlength{\itemsep}{6pt}
 }
 
 \renewcommand{\choiceshook}{
-	\setlength{\labelsep}{10pt}
-	\settowidth{\leftmargin}{\circled{W}.\hspace{5pt}\hspace{0em}}
-	\setlength{\itemsep}{10pt}
+    \setlength{\labelsep}{10pt}
+    \settowidth{\leftmargin}{\circled{W}.\hspace{5pt}\hspace{0em}}
+    \setlength{\itemsep}{10pt}
 }
 
 \renewcommand{\solutiontitle}{
-	\noindent\textbf{Solution:}\par\noindent
+    \noindent\textbf{Solution:}\par\noindent
 }
 
 %%%%% ONEPAR CHOICES SPREAD %%%%%
@@ -232,43 +232,43 @@
 %%%%% REDEFINE COVER PAGINATION AS ARABIC %%%%%
 \makeatletter
 \renewenvironment{coverpages}{%
-	\ifnum \value{numquestions}>0\relax
-		\ClassError{exam}{%
-			Coverpages cannot be used after questions have begun.\MessageBreak
-		}{%
-			All question, part, subpart, and subsubpart environments
-			\MessageBreak
-			must begin after the cover pages are complete.\MessageBreak
-		}%
-	\fi
-	\@coverpagestrue
-	% \pagenumbering{arabic}%
-	\adj@hdht@ftht
-	\thispagestyle{headandfoot}
+    \ifnum \value{numquestions}>0\relax
+	    \ClassError{exam}{%
+	        Coverpages cannot be used after questions have begun.\MessageBreak
+	    }{%
+	        All question, part, subpart, and subsubpart environments
+	        \MessageBreak
+	        must begin after the cover pages are complete.\MessageBreak
+	    }%
+    \fi
+    \@coverpagestrue
+    % \pagenumbering{arabic}%
+    \adj@hdht@ftht
+    \thispagestyle{headandfoot}
 }{%
-	\clearpage
-	% \setcounter{num@coverpages}{\value{page}}%
-	% \addtocounter{num@coverpages}{-1}%
-	% \pagenumbering{arabic}%
-	% Bugfix, Version 2.307\beta, 2009/06/11:
-	% We have to say \@coverpagesfalse before \adj@hdht@ftht
-	% because we're still inside the group created by the
-	% coverpages environment and we want to set the
-	% extraheadheight and extrafootheight to the values correct
-	% for the first non-cover page:
-	\@coverpagesfalse
-	\adj@hdht@ftht
+    \clearpage
+    % \setcounter{num@coverpages}{\value{page}}%
+    % \addtocounter{num@coverpages}{-1}%
+    % \pagenumbering{arabic}%
+    % Bugfix, Version 2.307\beta, 2009/06/11:
+    % We have to say \@coverpagesfalse before \adj@hdht@ftht
+    % because we're still inside the group created by the
+    % coverpages environment and we want to set the
+    % extraheadheight and extrafootheight to the values correct
+    % for the first non-cover page:
+    \@coverpagesfalse
+    \adj@hdht@ftht
 }
 \makeatother
 
 %%%%% SHOW 'SOLUTIONS' IN TITLEPAGE IF ANSWERS PRINTED %%%%%
 \providerobustcmd*{\printsolntitle}{
-	\ifprintanswers{
-		\vspace{20pt}
-		\fbox{\fbox{\Huge{\textssc{\textbf{\textcolor{red}{solutions}}}}}}
-		\vspace{20pt}
-	}
-	\fi{}
+    \ifprintanswers{
+        \vspace{20pt}
+        \fbox{\fbox{\Huge{\textssc{\textbf{\textcolor{red}{solutions}}}}}}
+        \vspace{20pt}
+    }
+    \fi{}
 }
 \providerobustcmd*{\envupspace}{\ifanswers{\vspace{20pt}}}
 
@@ -303,8 +303,8 @@
 
 %%%%% PURPOSE FORGOTTEN %%%%%
 \AtBeginEnvironment{tabularx}{
-	\tablining
-	\sisetup{text-rm={\tablining}}
+    \tablining
+    \sisetup{text-rm={\tablining}}
 }
 
 \renewcommand\tabularxcolumn[1]{m{#1}}
@@ -329,14 +329,14 @@
 %%%%% RADIO BUTTONS %%%%%
 \makeatletter
 \providerobustcmd*{\radiobutton}{%
-	\@ifstar{\@radiobutton0}{\@radiobutton1}%
+    \@ifstar{\@radiobutton0}{\@radiobutton1}%
 }
 \providerobustcmd*{\@radiobutton}[1]{%
-	\begin{tikzpicture}
-		\pgfmathsetlengthmacro\radius{height("X")/2}
-		\draw[radius=\radius] circle;
-		\ifcase#1 \fill[radius=.6*\radius] circle;\fi
-	\end{tikzpicture}
+    \begin{tikzpicture}
+	    \pgfmathsetlengthmacro\radius{height("X")/2}
+	    \draw[radius=\radius] circle;
+	    \ifcase#1 \fill[radius=.6*\radius] circle;\fi
+    \end{tikzpicture}
 }
 \makeatother
 
@@ -360,26 +360,26 @@
 \providebool{isdaq}
 
 \pgfkeys{
-	/ac/.is family, /ac/.cd,
-	category/.is choice,
-	round/.is choice,
-	% DEFINE ACTIONS FOR CATEGORY
-	/ac/category/.cd,
-	jnr/.code={\edef\category{Junior}},
-	snr/.code={\edef\category{Senior}},
-	junior/.code=\pgfkeysalso{category/jnr},
-	senior/.code=\pgfkeysalso{category/snr},
-	% DEFINE ACTIONS FOR CHOICES
-	/ac/round/.cd,
-	mcq/.code={\edef\round{MCQ}\booltrue{ismcq}},
-	team/.code={\edef\round{Team}\booltrue{isteam}},
-	obs/.code={\edef\round{Observation}\booltrue{isobs}},
-	daq/.code={\edef\round{Data Analysis}\booltrue{isdaq}},
-	% ALTERNATIVE NAMES
-	MCQ/.code=\pgfkeysalso{round/mcq},
-	Team/.code=\pgfkeysalso{round/team},
-	Obs/.code=\pgfkeysalso{round/obs},
-	DAQ/.code=\pgfkeysalso{round/daq},
+    /ac/.is family, /ac/.cd,
+    category/.is choice,
+    round/.is choice,
+    % DEFINE ACTIONS FOR CATEGORY
+    /ac/category/.cd,
+    jnr/.code={\edef\category{Junior}},
+    snr/.code={\edef\category{Senior}},
+    junior/.code=\pgfkeysalso{category/jnr},
+    senior/.code=\pgfkeysalso{category/snr},
+    % DEFINE ACTIONS FOR CHOICES
+    /ac/round/.cd,
+    mcq/.code={\edef\round{MCQ}\booltrue{ismcq}},
+    team/.code={\edef\round{Team}\booltrue{isteam}},
+    obs/.code={\edef\round{Observation}\booltrue{isobs}},
+    daq/.code={\edef\round{Data Analysis}\booltrue{isdaq}},
+    % ALTERNATIVE NAMES
+    MCQ/.code=\pgfkeysalso{round/mcq},
+    Team/.code=\pgfkeysalso{round/team},
+    Obs/.code=\pgfkeysalso{round/obs},
+    DAQ/.code=\pgfkeysalso{round/daq},
 }
 \providecommand*{\setcatround}[1]{\pgfqkeys{/ac}{#1}}
 \providecommand*{\catround}{\textbf{\textssc{\category{} \round{} Round}}}
@@ -387,7 +387,7 @@
 %%%%% ASTROCHALLENGE TITLING %%%%%
 \title{{\Huge\astrochallenge{}}}
 \author{\textcopyright \ National University of Singapore Astronomical Society \\
-	\textcopyright \ Nanyang Technological University Astronomical Society \\
+    \textcopyright \ Nanyang Technological University Astronomical Society \\
 }
 
 %%%%% ACCESS TITLE COMMANDS %%%%%
@@ -404,105 +404,105 @@
 %%%%% PAGE NUMBERING: 'Page X of total' %%%%%
 \coverfooter{}{Page \thepage{} of \totalnumpages{}}{\oddeven{\textbf{[Turn over]}}}
 \footer{}{Page \thepage{} of \totalnumpages{}}{
-	\oddeven{
-		\iflastpage{\textbf{[End of paper]}}{\textbf{[Turn over]}}
-	}
+    \oddeven{
+        \iflastpage{\textbf{[End of paper]}}{\textbf{[Turn over]}}
+    }
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS: MCQ %%%%%
 \providerobustcmd*{\acmcqinst}{
-	\begin{enumerate}[itemsep=8pt]
-		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-		\item Do \textbf{NOT} turn over this page until instructed to do so.
-		\item You have \textbf{2 hours} to attempt all questions in this paper. If you think there is more than one correct answer, choose the most correct answer.
-		\item At the end of the paper, submit this booklet together with your answer script.
-		\item Your answer script should clearly indicate your name, school, and team.
-		\item It is \textit{your} responsibility to ensure that your answer script has been submitted.
-	\end{enumerate}
+    \begin{enumerate}[itemsep=8pt]
+	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+	    \item Do \textbf{NOT} turn over this page until instructed to do so.
+	    \item You have \textbf{2 hours} to attempt all questions in this paper. If you think there is more than one correct answer, choose the most correct answer.
+	    \item At the end of the paper, submit this booklet together with your answer script.
+	    \item Your answer script should clearly indicate your name, school, and team.
+	    \item It is \textit{your} responsibility to ensure that your answer script has been submitted.
+    \end{enumerate}
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS: TEAM %%%%%
 \providerobustcmd*{\acteaminst}{
-	\begin{enumerate}[itemsep=8pt]
-		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-		\item Do \textbf{NOT} turn over this page until instructed to do so.
-		\item You have \textbf{2 hours} to attempt all questions in this paper.
-		\item At the end of the paper, submit this booklet together with your answer script.
-		\item Your answer script should clearly indicate your name, school, and team.
-		\item It is your responsibility to ensure that your answer script has been submitted.
-		\item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
-		\item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numbering of (i).
-	\end{enumerate}
+    \begin{enumerate}[itemsep=8pt]
+	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+	    \item Do \textbf{NOT} turn over this page until instructed to do so.
+	    \item You have \textbf{2 hours} to attempt all questions in this paper.
+	    \item At the end of the paper, submit this booklet together with your answer script.
+	    \item Your answer script should clearly indicate your name, school, and team.
+	    \item It is your responsibility to ensure that your answer script has been submitted.
+	    \item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
+	    \item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numbering of (i).
+    \end{enumerate}
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS: DAQ %%%%%
 \providerobustcmd*{\acdaqinst}{
-	In this part of \astrochallenge{}, you will work with a moderately large (approx. \num{4000} points) data set. You will process this data set, analyse it, observe trends, and draw conclusions. \textbf{There are no right or wrong answers}; you will be marked solely on the quality of your analysis, even if your statistical methods are incorrect.\\[8pt]
-	We \textbf{strongly} recommend you use industry-standard tools like \texttt{Microsoft Excel}\texttrademark, \texttt{RStudio} or various \texttt{Python} libraries to process the data.\par
+    In this part of \astrochallenge{}, you will work with a moderately large (approx. \num{4000} points) data set. You will process this data set, analyse it, observe trends, and draw conclusions. \textbf{There are no right or wrong answers}; you will be marked solely on the quality of your analysis, even if your statistical methods are incorrect.\\[8pt]
+    We \textbf{strongly} recommend you use industry-standard tools like \texttt{Microsoft Excel}\texttrademark, \texttt{RStudio} or various \texttt{Python} libraries to process the data.\par
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS: OBS %%%%%
 \providerobustcmd*{\acobsinst}{
-	\begin{enumerate}[itemsep=8pt]
-		\item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-		\item Do \textbf{NOT} turn over this page until instructed to do so.
-		\item You have \textbf{1 hour and 30 minutes} to attempt all questions in this paper.
-		\item At the end of the paper, submit this booklet together with your answer script.
-		\item Your answer script should clearly indicate your name, school, and team.
-		\item It is your responsibility to ensure that your answer script has been submitted.
-	\end{enumerate}
+    \begin{enumerate}[itemsep=8pt]
+	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+	    \item Do \textbf{NOT} turn over this page until instructed to do so.
+	    \item You have \textbf{1 hour and 30 minutes} to attempt all questions in this paper.
+	    \item At the end of the paper, submit this booklet together with your answer script.
+	    \item Your answer script should clearly indicate your name, school, and team.
+	    \item It is your responsibility to ensure that your answer script has been submitted.
+    \end{enumerate}
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS %%%%%
 \providerobustcmd*{\acinstructions}{
-	\ifbool{ismcq}{\acmcqinst}{
-		\ifbool{isteam}{\acteaminst}{
-			\ifbool{isdaq}{\acdaqinst}{
-				\ifbool{isobs}{\acobsinst}{}
-			}
-		}
-	}
+    \ifbool{ismcq}{\acmcqinst}{
+        \ifbool{isteam}{\acteaminst}{
+            \ifbool{isdaq}{\acdaqinst}{
+                \ifbool{isobs}{\acobsinst}{}
+            }
+        }
+    }
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTION BOX %%%%%
 \providerobustcmd*{\acinstbox}{
-	\vspace*{20pt}
-	\fbox{
-		\fbox{
-			\parbox{0.8\textwidth}{
-				\vspace*{5pt}
-				\begin{center}
-					{\large{\textbf{\textssc{please read these instructions carefully.}}}}
-				\end{center}
-				\vspace*{10pt}
+    \vspace*{20pt}
+    \fbox{
+        \fbox{
+            \parbox{0.8\textwidth}{
+                \vspace*{5pt}
+                \begin{center}
+	                {\large{\textbf{\textssc{please read these instructions carefully.}}}}
+                \end{center}
+                \vspace*{10pt}
 
-				\acinstructions{}
+                \acinstructions{}
 
-				\vspace*{5pt}
-			}
-		}
-	}
+                \vspace*{5pt}
+            }
+        }
+    }
 }
 
 %%%%% ASTROCHALLENGE COVER PAGE %%%%%
 \providerobustcmd*{\accoverpage}{
-	\begin{coverpages}
-		\begin{center}
-			\includegraphics[width=0.8\linewidth]{../graphics/misc/logo.jpg}
+    \begin{coverpages}
+	    \begin{center}
+		    \includegraphics[width=0.8\linewidth]{../graphics/misc/logo.jpg}
 
-			\newtitle{}
+		    \newtitle{}
 
-			{\Huge{\catround{}}}
+		    {\Huge{\catround{}}}
 
-			\printsolntitle{}
+		    \printsolntitle{}
 
-			\acpaperdate{}
+		    \acpaperdate{}
 
-			\acinstbox{}
+		    \acinstbox{}
 
-			\vspace*{20pt}
+		    \vspace*{20pt}
 
-			\newauthor{}
-		\end{center}
-	\end{coverpages}
+		    \newauthor{}
+	    \end{center}
+    \end{coverpages}
 }
