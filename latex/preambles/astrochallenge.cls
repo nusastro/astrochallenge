@@ -3,8 +3,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{astrochallenge}[20/07/14 NUS/NTU AstroChallenge document class]
 
-%%%%% MISC IMPORTS TO DEFINE FONT KEY=VALUE CLASS OPTIONS FIRST %%%%%
-\RequirePackage{iftex,etoolbox}
+%%%%% MISCELLANEOUS BUT PRIMARY IMPORTS %%%%%
+\RequirePackage{iftex,etoolbox,expl3,xparse}
 
 %%%%% FONTS & SYMBOLS %%%%%
 \RequirePackage[utf8]{inputenc}
@@ -54,7 +54,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifbool{islmodern}{
-	\RequirePackage{fix-cm}
+    \RequirePackage{fix-cm}
     \RequirePackage[rm={lining=true,tabular=false}]{cfr-lm}
     \RequirePackage{amsfonts, amssymb}
     %%%%% Define/redefine tabular-lining and oldstyle proportional figures
@@ -73,26 +73,28 @@
 
 \ifbool{ismpro}{
     \ifpdftex
-	    \RequirePackage{MnSymbol}
-	    \RequirePackage[
-	        minionint,
-	        lf,
-	        mathtabular,
-	        loosequotes,
-	        swash,
-	        opticals,
-	        footnotefigures
-	    ]{MinionPro}
-	    %%%%% Define/redefine tabular-lining and oldstyle proportional figures
-	    \providerobustcmd{\texttl}[1]{{\figureversion{tab}#1}}
-	    \providerobustcmd{\textpo}[1]{{\figureversion{osf}#1}}
-	    \providerobustcmd{\tablining}{\figureversion{tab}}
-	    \providerobustcmd{\propold}{\figureversion{osf}}
-	    % Define bold small caps for AC and other header labels
-	    \providerobustcmd{\textlbl}[1]{\textsc{\textbf{#1}}}
-	    % Define title style
-	    \providerobustcmd{\texttitle}[1]{{\Huge\textssc{\textbf{#1}}}}
-    \else
+        \RequirePackage{MnSymbol}
+        \RequirePackage[
+            minionint,
+            lf,
+            mathtabular,
+            loosequotes,
+            swash,
+            opticals,
+            footnotefigures
+        ]{MinionPro}
+        %%%%% Define/redefine tabular-lining and oldstyle proportional figures
+        \providerobustcmd{\texttl}[1]{{\figureversion{tab}#1}}
+        \providerobustcmd{\textpo}[1]{{\figureversion{osf}#1}}
+        \providerobustcmd{\tablining}{\figureversion{tab}}
+        \providerobustcmd{\propold}{\figureversion{osf}}
+        % Define bold small caps for AC and other header labels
+        \providerobustcmd{\textlbl}[1]{\textsc{\textbf{#1}}}
+        % Define title style
+        \providerobustcmd{\texttitle}[1]{{\Huge\textssc{\textbf{#1}}}}
+    \fi
+    \ifxetex
+        % TODO: COMPLETE MINIONPRO XETEX CODE
     \fi
 }{}
 
@@ -118,6 +120,7 @@
 \RequirePackage{pdflscape}
 \RequirePackage{enumitem}
 \RequirePackage{adjustbox}
+\RequirePackage[randomize,overload]{exam-randomizechoices}
 \RequirePackage[super]{nth}
 
 %%%%% SCIENCE FORMATTING %%%%%
@@ -174,7 +177,7 @@
 
 \providerobustcmd*\circled[1]{
     \begin{tikzpicture}[baseline=(char.base)]
-	    \node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
+        \node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
     \end{tikzpicture}
 }
 
@@ -288,6 +291,12 @@
     \noindent\textbf{Solution:}\par\noindent
 }
 
+%%%%% MCQ STATEMENTS LIST AND COMMANDS %%%%%
+\usepackage{enumitem}
+\newlist{statements}{enumerate}{1}
+\setlist[statements]{align=left,label=\textbf{\Roman{*}}.}
+
+
 %%%%% ONEPAR CHOICES SPREAD %%%%%
 \patchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
 \patchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
@@ -303,13 +312,13 @@
 %%%%% REDEFINE COVER PAGINATION AS ARABIC %%%%%
 \renewenvironment{coverpages}{%
     \ifnum \value{numquestions}>0\relax
-	    \ClassError{exam}{%
-	        Coverpages cannot be used after questions have begun.\MessageBreak
-	    }{%
-	        All question, part, subpart, and subsubpart environments
-	        \MessageBreak
-	        must begin after the cover pages are complete.\MessageBreak
-	    }%
+        \ClassError{exam}{%
+            Coverpages cannot be used after questions have begun.\MessageBreak
+        }{%
+            All question, part, subpart, and subsubpart environments
+            \MessageBreak
+            must begin after the cover pages are complete.\MessageBreak
+        }%
     \fi
     \@coverpagestrue
     % \pagenumbering{arabic}%
@@ -387,9 +396,9 @@
 }
 \providerobustcmd*{\@radiobutton}[1]{%
     \begin{tikzpicture}
-	    \pgfmathsetlengthmacro\radius{height("X")/2}
-	    \draw[radius=\radius] circle;
-	    \ifcase#1 \fill[radius=.6*\radius] circle;\fi
+        \pgfmathsetlengthmacro\radius{height("X")/2}
+        \draw[radius=\radius] circle;
+        \ifcase#1 \fill[radius=.6*\radius] circle;\fi
     \end{tikzpicture}
 }
 
@@ -429,26 +438,26 @@
 %%%%% ASTROCHALLENGE INSTRUCTIONS: MCQ %%%%%
 \providerobustcmd*{\ac@mcqinst}{
     \begin{enumerate}[itemsep=8pt]
-	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-	    \item Do \textlbl{not} turn over this page until instructed to do so.
-	    \item You have \textbf{2 hours} to attempt \textlbl{all} questions in this paper. If you think there is more than one correct answer, choose the \textit{most} correct answer.
-	    \item At the end of the paper, submit this booklet together with your answer script.
-	    \item Your answer script should clearly indicate your name, school, and team.
-	    \item It is \textit{your} responsibility to ensure that your answer script has been submitted.
+        \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+        \item Do \textlbl{not} turn over this page until instructed to do so.
+        \item You have \textbf{2 hours} to attempt \textlbl{all} questions in this paper. If you think there is more than one correct answer, choose the \textit{most} correct answer.
+        \item At the end of the paper, submit this booklet together with your answer script.
+        \item Your answer script should clearly indicate your name, school, and team.
+        \item It is \textit{your} responsibility to ensure that your answer script has been submitted.
     \end{enumerate}
 }
 
 %%%%% ASTROCHALLENGE INSTRUCTIONS: TEAM %%%%%
 \providerobustcmd*{\ac@teaminst}{
     \begin{enumerate}[itemsep=8pt]
-	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-	    \item Do \textbf{NOT} turn over this page until instructed to do so.
-	    \item You have \textbf{2 hours} to attempt all questions in this paper.
-	    \item At the end of the paper, submit this booklet together with your answer script.
-	    \item Your answer script should clearly indicate your name, school, and team.
-	    \item It is your responsibility to ensure that your answer script has been submitted.
-	    \item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
-	    \item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numeral (i).
+        \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+        \item Do \textbf{NOT} turn over this page until instructed to do so.
+        \item You have \textbf{2 hours} to attempt all questions in this paper.
+        \item At the end of the paper, submit this booklet together with your answer script.
+        \item Your answer script should clearly indicate your name, school, and team.
+        \item It is your responsibility to ensure that your answer script has been submitted.
+        \item The marks for each question are given in brackets in the right margin, like such: \textbf{[2]}.
+        \item The \textbf{alphabetical} parts (i) and (l) have been intentionally skipped, to avoid confusion with the Roman numeral (i).
     \end{enumerate}
 }
 
@@ -461,12 +470,12 @@
 %%%%% ASTROCHALLENGE INSTRUCTIONS: OBS %%%%%
 \providerobustcmd*{\ac@obsinst}{
     \begin{enumerate}[itemsep=8pt]
-	    \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
-	    \item Do \textlbl{not} turn over this page until instructed to do so.
-	    \item You have \textbf{1 hour and 30 minutes} to attempt all questions in this paper.
-	    \item At the end of the paper, submit this booklet together with your answer script.
-	    \item Your answer script should clearly indicate your name, school, and team.
-	    \item It is your responsibility to ensure that your answer script has been submitted.
+        \item This paper consists of \textbf{\totalnumpages} printed pages, including this cover page.
+        \item Do \textlbl{not} turn over this page until instructed to do so.
+        \item You have \textbf{1 hour and 30 minutes} to attempt all questions in this paper.
+        \item At the end of the paper, submit this booklet together with your answer script.
+        \item Your answer script should clearly indicate your name, school, and team.
+        \item It is your responsibility to ensure that your answer script has been submitted.
     \end{enumerate}
 }
 
@@ -489,7 +498,7 @@
             \parbox{0.8\textwidth}{
                 \vspace*{5pt}
                 \begin{center}
-	                {\large{\textlbl{please read these instructions carefully.}}}
+                    {\large{\textlbl{please read these instructions carefully.}}}
                 \end{center}
                 \vspace*{10pt}
 
@@ -504,22 +513,22 @@
 %%%%% ASTROCHALLENGE COVER PAGE %%%%%
 \renewrobustcmd{\maketitle}{
     \begin{coverpages}
-	    \begin{center}
-		    \includegraphics[width=0.8\linewidth]{../graphics/misc/logo.jpg}
+        \begin{center}
+            \includegraphics[width=0.8\linewidth]{../graphics/misc/logo.jpg}
 
-		    \@title
+            \@title
 
-		    \texttitle{\ac@category{} \ac@round{} Round}
+            \texttitle{\ac@category{} \ac@round{} Round}
 
-		    \ac@solntitle{}
+            \ac@solntitle{}
 
-		    \acpaperdate{}
+            \acpaperdate{}
 
-		    \ac@instbox
+            \ac@instbox
 
-		    \vspace*{20pt}
+            \vspace*{20pt}
 
-		    \@author
-	    \end{center}
+            \@author
+        \end{center}
     \end{coverpages}
 }
