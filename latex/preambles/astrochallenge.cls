@@ -69,6 +69,7 @@
     \providerobustcmd{\textlbl}[1]{\textsc{\textbf{#1}}}
     %%%%% Define title style
     \providerobustcmd{\texttitle}[1]{{\Huge\textlbl{#1}}}
+    \ClassWarning{astrochallenge}{lmodern is a compatibility option. Request support from the class author to get minionpro working}
 }{}
 
 \ifbool{ismpro}{
@@ -76,7 +77,7 @@
         \RequirePackage{MnSymbol}
         \RequirePackage[
             minionint,
-            lf,
+            lf, 
             mathtabular,
             loosequotes,
             swash,
@@ -122,6 +123,8 @@
 \RequirePackage{adjustbox}
 \RequirePackage[randomize,overload]{exam-randomizechoices}
 \RequirePackage[super]{nth}
+% SETS RANDOM CHOICES SEED: 'ASTROCHALLENGE \year' TO ASCII VALUES
+\setrandomizerseed{\numexpr`A+`s+`t+`r+`o+`C+`h+`a+`l+`l+`e+`n+`g+`e+\year\relax}
 
 %%%%% SCIENCE FORMATTING %%%%%
 \RequirePackage{physics}
@@ -140,8 +143,8 @@
 % OPTIONS SETUP
 \renewrobustcmd{\CancelColor}{\color{red}}
 \pgfkeys{
-    /csteps/inner xsep=6pt,
-    /csteps/inner ysep=6pt
+    /csteps/inner xsep=12pt,
+    /csteps/inner ysep=12pt,
 }
 
 %%%%% GRAPHICS, CAPTIONS, TABLES %%%%%
@@ -175,9 +178,10 @@
 \pgfplotsset{compat=newest}
 \contourlength{1pt}
 
+%%%%% TIKZ CIRCLES %%%%%
 \providerobustcmd*\circled[1]{
     \begin{tikzpicture}[baseline=(char.base)]
-        \node[shape=circle, draw, minimum size=1.5em, inner sep=0pt, thick] (char) {#1};
+        \node[shape=circle, draw, minimum size=1.5em, inner sep=0pt] (char) {#1};
     \end{tikzpicture}
 }
 
@@ -208,7 +212,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% CREF AND HYPERREF SETUP %%%%%
+% CLEVEREF AND HYPERREF SETUP %%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -230,8 +234,8 @@
 \crefname{algorithm}{\textbf{Algorithm}}{\textbf{Algorithms}}
 \Crefname{algorithm}{\textbf{Algorithm}}{\textbf{Algorithms}}
 
-%%%%% SPECIFIC TO EXAM CLASS%%%%%
-\creflabelformat{question}{#2\textbf{#1}.#3}
+%%%%% SPECIFIC TO EXAM CLASS %%%%%
+\creflabelformat{question}{#2\textbf{#1}#3}
 \creflabelformat{partno}{(#2\textbf{#1}#3)}
 \creflabelformat{subpart}{(#2\textbf{#1}#3)}
 
@@ -255,14 +259,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%% CHOICES ON ONE PAGE %%%%%
-\BeforeBeginEnvironment{choices}{\par\nopagebreak\minipage{\linewidth}}
-\AfterEndEnvironment{choices}{\endminipage}
-
 %%%%% QUESTION/CHOICE LABELS %%%%%
 \renewrobustcmd{\questionlabel}{\thequestion.\hfill}
 \renewrobustcmd{\subpartlabel}{(\thesubpart)}
-\renewrobustcmd{\choicelabel}{\Circled{\thechoice}}
+\renewrobustcmd{\choicelabel}{\circled{\thechoice}}
 
 %%%%% POINTS FORMATTING %%%%%
 \renewrobustcmd{\questionshook}{
@@ -284,7 +284,7 @@
 \renewrobustcmd{\choiceshook}{
     \setlength{\labelsep}{10pt}
     \settowidth{\leftmargin}{\circled{W}.\hspace{5pt}\hspace{0em}}
-    \setlength{\itemsep}{10pt}
+    \setlength{\itemsep}{8pt}
 }
 
 \renewrobustcmd{\solutiontitle}{
@@ -294,7 +294,14 @@
 %%%%% MCQ STATEMENTS LIST AND COMMANDS %%%%%
 \usepackage{enumitem}
 \newlist{statements}{enumerate}{1}
-\setlist[statements]{align=left,label=\textbf{\Roman{*}}.}
+\setlist[statements]{align=left,leftmargin=*,parsep=8pt,label=\textbf{\Roman{*}}.}
+
+
+%%%%% MCQ STATEMENTS AND CHOICES ON ONE PAGE %%%%%
+\BeforeBeginEnvironment{choices}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{choices}{\endminipage}
+\BeforeBeginEnvironment{statements}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{statements}{\endminipage\vspace*{6pt}}
 
 
 %%%%% ONEPAR CHOICES SPREAD %%%%%
@@ -310,31 +317,21 @@
 \pointformat{\bfseries\textbf[\themarginpoints]}
 
 %%%%% REDEFINE COVER PAGINATION AS ARABIC %%%%%
-\renewenvironment{coverpages}{%
+\renewenvironment{coverpages}{
     \ifnum \value{numquestions}>0\relax
-        \ClassError{exam}{%
+        \ClassError{exam}{
             Coverpages cannot be used after questions have begun.\MessageBreak
-        }{%
+        }{
             All question, part, subpart, and subsubpart environments
             \MessageBreak
             must begin after the cover pages are complete.\MessageBreak
-        }%
+        }
     \fi
     \@coverpagestrue
-    % \pagenumbering{arabic}%
     \adj@hdht@ftht
     \thispagestyle{headandfoot}
-}{%
+}{
     \clearpage
-    % \setcounter{num@coverpages}{\value{page}}%
-    % \addtocounter{num@coverpages}{-1}%
-    % \pagenumbering{arabic}%
-    % Bugfix, Version 2.307\beta, 2009/06/11:
-    % We have to say \@coverpagesfalse before \adj@hdht@ftht
-    % because we're still inside the group created by the
-    % coverpages environment and we want to set the
-    % extraheadheight and extrafootheight to the values correct
-    % for the first non-cover page:
     \@coverpagesfalse
     \adj@hdht@ftht
 }
@@ -349,10 +346,6 @@
     \else{\vspace{20pt}}
     \fi{}
 }
-
-%%%%% REMOVE SPACES FROM EnvFullwidth command
-\BeforeBeginEnvironment{EnvFullwidth}{\vspace{-10pt}}
-\AfterEndEnvironment{EnvFullwidth}{\vspace{-35pt}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -372,8 +365,14 @@
 
 \renewrobustcmd{\tabularxcolumn}[1]{m{#1}}
 
-% ADJUST SPACES AROUND SECTION HEADERS
-\titlelabel{\vspace{-4cm}\thetitle\hspace{10pt}}
+% ADJUST SPACES AROUND SECTION HEADERS FOR TEAM ROUND
+\ifbool{isteam}{
+    \renewcommand{\thesection}{Question~\arabic{section}}
+    \renewcommand{\thesubsection}{Part \Roman{subsection}}
+    \renewcommand{\thequestion}{\alph{question}}
+    \renewcommand{\questionlabel}{(\thequestion)}
+    \renewcommand{\thepartno}{\roman{partno}}
+}{}
 \setlength{\jot}{8pt}
 
 %%%%% COPY-PASTABLE PDF %%%%%
@@ -426,6 +425,16 @@
 \coverheader{\small{\astrochallenge{}}}{}{\small{\catround{}}}
 \header{\small{\astrochallenge{}}}{}{\small{\catround{}}}
 \headrule{}
+
+% USEINFO COMMAND: 'USE THE FOLLOWING INFORMATION TO ANSWER QUESTIONS...' WITH COMMA-SEPARATED LIST
+\providerobustcmd{\useinfo}[2]{
+    \begin{EnvFullwidth}
+        \textbf{Use the following information to answer \cref{#1}}.
+        \\
+        #2
+    \end{EnvFullwidth}
+
+}
 
 %%%%% PAGE NUMBERING: 'Page X of total' %%%%%
 \coverfooter{}{Page \thepage{} of \totalnumpages{}}{\oddeven{\textbf{[Turn over]}}}
