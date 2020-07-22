@@ -56,7 +56,7 @@ function WriteMCQBoilerPlate {
 \fi
     "@
 
-    Add-Content -Path $ACFilePath -Value $("\end{questions}" + [Environment]::NewLine)
+    Add-Content -Path $ACFilePath -Value $("\end{questions}" + [Environment]::NewLine) + $PrintAnswers
 }
 
 
