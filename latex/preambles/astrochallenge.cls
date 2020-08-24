@@ -36,16 +36,18 @@
 \DeclareOption{mcq}{\providerobustcmd{\ac@round}{MCQ}\booltrue{ismcq}}
 \DeclareOption{team}{\providerobustcmd{\ac@round}{Team}\booltrue{isteam}}
 \DeclareOption{obs}{\providerobustcmd{\ac@round}{Observation}\booltrue{isobs}}
-\DeclareOption{daq}{\providerobustcmd{\ac@round}{DAQ}\booltrue{isdaq}}
+\DeclareOption{daq}{\providerobustcmd{\ac@round}{Data Analysis}\booltrue{isdaq}}
 
 %%%%% OTHER OPTIONS TO BE FORWARDED %%%%%
 \DeclareOption*{\PassOptionsToClass{addpoints,\CurrentOption}{exam}}
 
+%%%%% PROCESS THE OPTIONS %%%%%
 \ProcessOptions\relax
 
 \providerobustcmd*{\setcatround}[1]{\pgfqkeys{/ac}{#1}}
 \providerobustcmd{\catround}{\textlbl{\ac@category{} \ac@round{} Round}}
 
+%%%%% LOAD THE EXAM CLASS AS A BASE %%%%%
 \LoadClass{exam}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,7 +79,7 @@
         \RequirePackage{MnSymbol}
         \RequirePackage[
             minionint,
-            lf, 
+            lf,
             mathtabular,
             loosequotes,
             swash,
@@ -93,6 +95,7 @@
         \providerobustcmd{\textlbl}[1]{\textsc{\textbf{#1}}}
         % Define title style
         \providerobustcmd{\texttitle}[1]{{\Huge\textssc{\textbf{#1}}}}
+        \renewcommand{\ttdefault}{lmtt}
     \fi
     \ifxetex
         % TODO: COMPLETE MINIONPRO XETEX CODE
@@ -106,7 +109,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% FONTS & SYMBOLS %%%%%
-\RequirePackage{inconsolata}
+% \RequirePackage{inconsolata}
 \RequirePackage{amsmath}
 \RequirePackage{wasysym}
 \RequirePackage{microtype}
@@ -114,6 +117,7 @@
 %%%%% GEOMETRY, PAGE SETUP, SPACING, PARAGRAPHING %%%%%
 \RequirePackage[margin=2.5cm,a4paper]{geometry}
 \RequirePackage{titlesec}
+\RequirePackage{appendix}
 \RequirePackage{multicol}
 \RequirePackage{multirow}
 \RequirePackage{parskip}
@@ -126,7 +130,7 @@
 % SETS RANDOM CHOICES SEED: 'ASTROCHALLENGE \year' TO ASCII VALUES
 \setrandomizerseed{\numexpr`A+`s+`t+`r+`o+`C+`h+`a+`l+`l+`e+`n+`g+`e+\year\relax}
 
-%%%%% SCIENCE FORMATTING %%%%%
+%%%%% SCIENCE FORMATTING AND LANGUAGE %%%%%
 \RequirePackage{physics}
 \RequirePackage[
     arc-separator = \,,
@@ -140,6 +144,8 @@
 \RequirePackage[version=4]{mhchem}
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{circledsteps}
+\RequirePackage[british]{babel}
+\RequirePackage{csquotes}
 % OPTIONS SETUP
 \renewrobustcmd{\CancelColor}{\color{red}}
 \pgfkeys{
@@ -281,6 +287,12 @@
     % \setlength{\itemsep}{6pt}
 }
 
+\renewrobustcmd{\subsubpartshook}{
+    \renewrobustcmd\makelabel[1]{\rlap{##1}\hss}
+    % \setlength{\itemsep}{6pt}
+}
+
+
 \renewrobustcmd{\choiceshook}{
     \setlength{\labelsep}{10pt}
     \settowidth{\leftmargin}{\circled{W}.\hspace{5pt}\hspace{0em}}
@@ -292,7 +304,6 @@
 }
 
 %%%%% MCQ STATEMENTS LIST AND COMMANDS %%%%%
-\usepackage{enumitem}
 \newlist{statements}{enumerate}{1}
 \setlist[statements]{align=left,leftmargin=*,parsep=8pt,label=\textbf{\Roman{*}}.}
 
@@ -347,6 +358,9 @@
     \fi{}
 }
 
+%%%%% APPEND DROP POINTS TO QUESTIONS, PARTS AND SUBPARTS
+\apptocmd{\subpart}{\droppoints{}}{}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%% MISCELLANEOUS %%%%%
@@ -390,14 +404,11 @@
 \AtBeginEnvironment{figure}{\centering}
 
 %%%%% RADIO BUTTONS %%%%%
-\providerobustcmd*{\radiobutton}{%
-    \@ifstar{\@radiobutton0}{\@radiobutton1}
-}
-\providerobustcmd*{\@radiobutton}[1]{%
+\NewDocumentCommand\radiobutton{s}{
     \begin{tikzpicture}
         \pgfmathsetlengthmacro\radius{height("X")/2}
         \draw[radius=\radius] circle;
-        \ifcase#1 \fill[radius=.6*\radius] circle;\fi
+        \IfBooleanTF#1{\fill[radius=.6*\radius] circle;}{}
     \end{tikzpicture}
 }
 
@@ -433,7 +444,6 @@
         \\
         #2
     \end{EnvFullwidth}
-
 }
 
 %%%%% PAGE NUMBERING: 'Page X of total' %%%%%
