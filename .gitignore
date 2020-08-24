@@ -4,6 +4,9 @@ latex/graphics/questions
 latex/papers/*
 !latex/papers/AC_template.tex
 
+# VSCode files
+.vscode/
+
 # LaTeX build files
 *.aux
 *.glo
